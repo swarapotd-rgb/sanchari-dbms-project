@@ -1,0 +1,39 @@
+# ---- secrets: never commit these -----------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ---- node / next.js (arrives later) --------------------------------
+node_modules/
+.next/
+out/
+build/
+dist/
+.vercel
+
+# ---- database dumps and local data ---------------------------------
+*.dump
+*.sql.gz
+pgdata/
+
+# ---- logs ----------------------------------------------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---- editors and OS --------------------------------------------------
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- python (if we script embedding generation later) ---------------
+__pycache__/
+*.pyc
+.venv/
+venv/
