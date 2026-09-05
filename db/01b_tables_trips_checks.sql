@@ -4,8 +4,8 @@
 --               itinerary stops, feasibility runs, violations, reviews.
 --  Author     : Shreya (original)
 --  Revised by : Swara — type alignment, named keys, ON DELETE actions,
---               UNIQUE constraints, TIMESTAMP decision. See CHANGELOG
---               block at the end of this file.
+--               UNIQUE constraints, TIMESTAMP decision.
+--  Revised by : Shreya + Swara (round 2) — see CHANGELOG at the end.
 --  Runs after : 01a_tables_people_places.sql  (foreign keys point into
 --               user_account, place, destination, transport_mode)
 --
@@ -51,10 +51,10 @@ CREATE TABLE trip (
     -- ---------------- constraints ----------------
     CONSTRAINT pk_trip PRIMARY KEY (trip_id),
 
-    CONSTRAINT fk_trip_owner FOREIGN KEY (owner_user_id)
+    CONSTRAINT fk_trip_user_account FOREIGN KEY (owner_user_id)
         REFERENCES user_account (user_id) ON DELETE CASCADE,
 
-    CONSTRAINT fk_trip_mode FOREIGN KEY (primary_mode_id)
+    CONSTRAINT fk_trip_transport_mode FOREIGN KEY (primary_mode_id)
         REFERENCES transport_mode (mode_id) ON DELETE RESTRICT,
 
     CONSTRAINT ck_trip_dates      CHECK (end_date >= start_date),
@@ -145,14 +145,14 @@ CREATE TABLE itinerary_stop (
     -- data
     planned_arrival         TIMESTAMP       NOT NULL,
     planned_departure       TIMESTAMP       NOT NULL,
-    estimated_cost          NUMERIC(10,2)   NOT NULL DEFAULT 0,
+    estimated_cost          NUMERIC(10,2),  -- NULL if the stop's cost hasn't been estimated yet
     notes                   TEXT,
 
     -- ---------------- constraints ----------------
     CONSTRAINT pk_itinerary_stop PRIMARY KEY (trip_id, day_number, stop_seq),
 
     -- composite foreign key: both columns in one clause
-    CONSTRAINT fk_itinerary_stop_day FOREIGN KEY (trip_id, day_number)
+    CONSTRAINT fk_itinerary_stop_trip_day FOREIGN KEY (trip_id, day_number)
         REFERENCES trip_day (trip_id, day_number) ON DELETE CASCADE,
 
     -- RESTRICT: deleting a place someone has planned to visit should
@@ -162,7 +162,7 @@ CREATE TABLE itinerary_stop (
 
     CONSTRAINT ck_itinerary_stop_seq   CHECK (stop_seq > 0),
     CONSTRAINT ck_itinerary_stop_times CHECK (planned_departure > planned_arrival),
-    CONSTRAINT ck_itinerary_stop_cost  CHECK (estimated_cost >= 0)
+    CONSTRAINT ck_itinerary_stop_cost  CHECK (estimated_cost IS NULL OR estimated_cost >= 0)
 );
 
 COMMENT ON TABLE  itinerary_stop                  IS 'Two-level weak entity. One planned visit within a day.';
@@ -220,11 +220,14 @@ COMMENT ON TABLE feasibility_run IS 'One validation pass over a trip. History is
 --
 --  The three stop columns are a single composite foreign key and are ALL
 --  nullable, because trip-level problems (over budget, too much driving)
---  belong to no particular stop. PostgreSQL's default MATCH SIMPLE means
---  the foreign key is simply not enforced when any of the three is NULL,
---  which is the behaviour we want — but it also means a HALF-filled
---  reference would slip through unchecked. ck_violation_stop_ref closes
---  that hole: either all three are set, or none are.
+--  belong to no particular stop. They ON DELETE SET NULL rather than
+--  CASCADE: this link is optional, not identifying, so a stop being
+--  deleted later should turn the violation back into a whole-trip-style
+--  record, not erase the fact that the check ever failed.
+--  PostgreSQL's default MATCH SIMPLE means the foreign key is simply not
+--  enforced when any of the three is NULL — but that also means a
+--  HALF-filled reference would slip through unchecked. ck_violation_stop_ref
+--  closes that hole: either all three are set, or none are.
 --
 --  observed_value and expected_value are stored separately, not folded
 --  into the message, so the interface can say "arrives 17:45, last entry
@@ -253,13 +256,14 @@ CREATE TABLE violation (
     -- ---------------- constraints ----------------
     CONSTRAINT pk_violation PRIMARY KEY (run_id, violation_no),
 
-    CONSTRAINT fk_violation_run FOREIGN KEY (run_id)
+    CONSTRAINT fk_violation_feasibility_run FOREIGN KEY (run_id)
         REFERENCES feasibility_run (run_id) ON DELETE CASCADE,
 
-    -- three-column composite foreign key, one clause
-    CONSTRAINT fk_violation_stop FOREIGN KEY (trip_id, day_number, stop_seq)
+    -- three-column composite foreign key, one clause; optional link,
+    -- so the violation survives the stop being deleted
+    CONSTRAINT fk_violation_itinerary_stop FOREIGN KEY (trip_id, day_number, stop_seq)
         REFERENCES itinerary_stop (trip_id, day_number, stop_seq)
-        ON DELETE CASCADE,
+        ON DELETE SET NULL,
 
     CONSTRAINT ck_violation_rule CHECK (rule_code IN
         ('R01','R02','R03','R04','R05','R06','R07','R08')),
@@ -292,6 +296,10 @@ COMMENT ON COLUMN violation.expected_value  IS 'What it needed to be, e.g. <= 17
 --  one review per person per place per visit. Without that UNIQUE, a
 --  single user could post unlimited reviews of one place and quietly
 --  corrupt place.avg_rating, which a trigger maintains from this table.
+--
+--  fk_review_summary_place is RESTRICT, not CASCADE: a place with
+--  reviews pointing at it shouldn't disappear and take the reviews with
+--  it, the same reasoning CONVENTIONS.md gives for itinerary_stop.
 -- =====================================================================
 CREATE TABLE review_summary (
     -- key
@@ -320,9 +328,9 @@ CREATE TABLE review_summary (
     CONSTRAINT pk_review_summary PRIMARY KEY (review_id),
 
     CONSTRAINT fk_review_summary_place FOREIGN KEY (place_id)
-        REFERENCES place (place_id) ON DELETE CASCADE,
+        REFERENCES place (place_id) ON DELETE RESTRICT,
 
-    CONSTRAINT fk_review_summary_user FOREIGN KEY (user_id)
+    CONSTRAINT fk_review_summary_user_account FOREIGN KEY (user_id)
         REFERENCES user_account (user_id) ON DELETE CASCADE,
 
     -- one review per person per place per visit date
@@ -344,25 +352,19 @@ COMMENT ON COLUMN review_summary.actual_duration_min IS 'Feeds back into place.t
 --
 --  1. TYPES. owner_user_id, place_id, user_id and every trip_id changed
 --     from INTEGER to BIGINT; trip_id / run_id / review_id from SERIAL
---     to BIGSERIAL. They now match the BIGSERIAL keys in 01a. The old
---     INTEGER columns worked, but could not reference an id above
---     2,147,483,647 and disagreed with §09 of the design document.
+--     to BIGSERIAL. They now match the BIGSERIAL keys in 01a.
 --
---  2. NAMED PRIMARY KEYS. `SERIAL PRIMARY KEY` produced system-generated
---     names (trip_pkey, feasibility_run_pkey, review_summary_pkey).
---     Replaced with pk_trip / pk_feasibility_run / pk_review_summary per
---     CONVENTIONS.md §2, which exists so constraints can be dropped by
---     name in the ALTER/DROP demo.
+--  2. NAMED PRIMARY KEYS. Replaced system-generated names with
+--     pk_trip / pk_feasibility_run / pk_review_summary per
+--     CONVENTIONS.md §2.
 --
---  3. ON DELETE ACTIONS. Seven foreign keys had no action and defaulted
---     to NO ACTION, meaning deleting a user with trips would fail rather
---     than cascade. Now: CASCADE on fk_trip_owner, fk_review_summary_*,
---     fk_violation_stop; SET NULL on fk_trip_day_destination; RESTRICT
---     on fk_trip_mode and fk_itinerary_stop_place.
+--  3. ON DELETE ACTIONS. CASCADE on fk_trip_user_account,
+--     fk_review_summary_user_account; SET NULL on fk_trip_day_destination,
+--     fk_violation_itinerary_stop; RESTRICT on fk_trip_transport_mode,
+--     fk_itinerary_stop_place, fk_review_summary_place.
 --
 --  4. UNIQUE CONSTRAINTS. uq_trip_day_date and uq_review_summary_visit
---     added — neither table had any UNIQUE constraint, so one trip could
---     hold two Day 3s and one user could review a place endlessly.
+--     added.
 --
 --  5. TIMESTAMP. planned_arrival / planned_departure changed from TIME
 --     to TIMESTAMP, so rule R04 arithmetic survives a midnight crossing.
@@ -372,8 +374,20 @@ COMMENT ON COLUMN review_summary.actual_duration_min IS 'Feeds back into place.t
 --     ck_review_summary_duration, and ck_violation_stop_ref added.
 --     'cancelled' added to trip status, 'info' to violation severity.
 --
---  7. CONSTRAINT NAMES aligned to fk_<child>_<parent> per CONVENTIONS.md
---     (fk_stop_place -> fk_itinerary_stop_place, and so on).
+--  7. CONSTRAINT NAMES aligned to fk_<child>_<parent> per CONVENTIONS.md.
+--
+--  ROUND 2 (Shreya + Swara, after review):
+--  8. ON DELETE corrected on fk_review_summary_place (CASCADE -> RESTRICT)
+--     and fk_violation_itinerary_stop (CASCADE -> SET NULL), per
+--     CONVENTIONS.md §6's reference-data and optional-link rules.
+--  9. CONSTRAINT NAMES un-shortened: fk_itinerary_stop_day ->
+--     fk_itinerary_stop_trip_day, fk_violation_run ->
+--     fk_violation_feasibility_run, fk_violation_stop ->
+--     fk_violation_itinerary_stop, fk_review_summary_user ->
+--     fk_review_summary_user_account, fk_trip_owner ->
+--     fk_trip_user_account, fk_trip_mode -> fk_trip_transport_mode.
+--  10. estimated_cost made nullable again (was NOT NULL DEFAULT 0),
+--      so "not yet estimated" is distinguishable from "costs nothing."
 --
 --  Sanity check with 01a:
 --      SELECT count(*) FROM information_schema.tables
