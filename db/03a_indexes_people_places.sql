@@ -63,6 +63,13 @@ CREATE INDEX idx_place_type
 CREATE INDEX idx_travel_leg_reverse
     ON travel_leg (to_place_id, mode_id);
 
+-- mode_id is the THIRD column of the primary key and the SECOND of
+-- idx_travel_leg_reverse, so neither index can be used for a lookup that
+-- starts with it. Deleting a transport_mode would otherwise scan the
+-- whole of travel_leg to check for orphans.
+CREATE INDEX idx_travel_leg_mode
+    ON travel_leg (mode_id);
+
 
 -- ============ the interesting one: a range index ======================
 --
@@ -104,5 +111,5 @@ CREATE INDEX idx_place_embedding_hnsw
 --  Sanity check:
 --      SELECT indexname FROM pg_indexes
 --      WHERE schemaname = 'public' AND indexname LIKE 'idx_%'
---      ORDER BY indexname;                        -- expect 8 rows
+--      ORDER BY indexname;                        -- expect 9 rows
 -- =====================================================================
