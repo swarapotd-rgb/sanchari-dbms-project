@@ -1,0 +1,5 @@
+destination,name,start_date,end_date,reason_code,is_annual_recurring
+Coorg / Kodagu,Kote Betta,2026-06-01,2026-09-30,monsoon,true
+Coorg / Kodagu,Mandalpatti,2026-06-15,2026-09-15,monsoon,true
+Coorg / Kodagu,Dubare Elephant Camp,2026-11-10,2026-11-12,maintenance,false
+Hampi,Lotus Mahal,2026-12-01,2026-12-03,maintenance,false
