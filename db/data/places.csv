@@ -325,3 +325,35 @@ Bhongir & Yadadri,Telangana,Bhongir Fort,fort,17.5154755,78.8927701,120,10,10,tr
 Bhongir & Yadadri,Telangana,Yadagirigutta Lakshmi Narasimha Temple,temple,17.5889240,78.9442447,120,0,0,false,Rebuilt hilltop cave temple of Narasimha in black granite,temples-spiritual:1.0,osm:204532940
 Bhongir & Yadadri,Telangana,Surendrapuri,museum,17.5920000,78.9230000,120,250,250,false,Mythological museum of replica temples and Puranic scenes,museums-art-culture:1.0;family-entertainment:0.6,manual
 Bhongir & Yadadri,Telangana,Kolanupaka Jain Temple,heritage,17.6990000,78.9860000,60,0,0,false,Two-thousand-year-old Jain pilgrimage temple with a jade Mahavira,sacred-heritage:1.0;heritage-ruins:0.6,manual
+Panaji & Old Goa,Goa,Basilica of Bom Jesus,heritage,15.5006966,73.9113075,45,0,0,false,UNESCO-listed basilica holding the relics of St Francis Xavier,sacred-heritage:1.0;heritage-ruins:0.6;photography:0.5,osm:3569663
+Panaji & Old Goa,Goa,Se Cathedral,heritage,15.5037609,73.9121951,30,0,0,false,"Largest church in Asia when built, with the Golden Bell",sacred-heritage:1.0,osm:201243945
+Panaji & Old Goa,Goa,Church of St. Augustine Ruins,heritage,15.4996407,73.9065675,30,0,0,true,Towering 46-metre ruined bell tower of a 1602 church,heritage-ruins:1.0;photography:0.7,osm:1349265057
+Panaji & Old Goa,Goa,Archaeological Museum Old Goa,museum,15.5031946,73.9113799,45,10,10,false,ASI museum in the Convent of St Francis with portraits of Portuguese governors,museums-art-culture:1.0;heritage-ruins:0.5,osm:1467001287
+Panaji & Old Goa,Goa,Museum of Christian Art,museum,15.5012472,73.9069533,45,50,100,false,Indo-Portuguese church art in the Convent of Santa Monica,museums-art-culture:1.0;sacred-heritage:0.6,osm:11623115969
+Panaji & Old Goa,Goa,Our Lady of the Immaculate Conception Panaji,heritage,15.4985448,73.8297359,20,0,0,false,White zigzag-staired church overlooking Panaji's main square,sacred-heritage:1.0;photography:0.6,osm:429448104
+Panaji & Old Goa,Goa,Fontainhas Latin Quarter,heritage,15.4980000,73.8340000,90,0,0,true,Portuguese-era quarter of colourful houses and narrow lanes,city-experiences:1.0;photography:0.8;heritage-ruins:0.4,manual
+Panaji & Old Goa,Goa,Salim Ali Bird Sanctuary,wildlife,15.5165642,73.8538714,90,50,50,true,Mangrove sanctuary on Chorao island reached by ferry from Ribandar,wildlife-safari:1.0;forests-nature:0.7,osm:19107932
+North Goa coast,Goa,Calangute Beach,beach,15.5440000,73.7530000,120,0,0,true,"Goa's busiest beach, known as the queen of beaches",beaches-coast:1.0;adventure-water-sports:0.6,manual
+North Goa coast,Goa,Baga Beach,beach,15.5575058,73.7504905,120,0,0,true,"Beach of shacks, water sports and nightlife",beaches-coast:1.0;adventure-water-sports:0.7;food-markets:0.5,osm:6423947
+North Goa coast,Goa,Anjuna Beach,beach,15.5730000,73.7400000,90,0,0,true,"Rocky beach of the old hippie trail, with a Wednesday flea market",beaches-coast:1.0;food-markets:0.5,manual
+North Goa coast,Goa,Vagator Beach,beach,15.5976558,73.7336081,90,0,0,true,Beach below red cliffs with a carved face in the rock,beaches-coast:1.0;photography:0.5,osm:90307701
+North Goa coast,Goa,Chapora Fort,fort,15.6059263,73.7360558,45,0,0,true,Laterite hill fort with views over Vagator and the Chapora river,forts-palaces-architecture:1.0;viewpoints-sunsets:0.8,osm:15959326
+North Goa coast,Goa,Fort Aguada,fort,15.4924157,73.7739318,60,0,0,true,1612 Portuguese fort and lighthouse at the mouth of the Mandovi,forts-palaces-architecture:1.0;beaches-coast:0.5;viewpoints-sunsets:0.6,osm:6411419
+North Goa coast,Goa,Reis Magos Fort,fort,15.4964846,73.8091247,60,50,100,true,"Restored fort facing Panaji across the Mandovi, now a cultural centre",forts-palaces-architecture:1.0;museums-art-culture:0.5,osm:194550880
+North Goa coast,Goa,Arambol Beach,beach,15.6793153,73.7057620,120,0,0,true,Laid-back northern beach with a freshwater sweet lake behind it,beaches-coast:1.0;lakes-rivers-backwaters:0.4,osm:199370623
+North Goa coast,Goa,Arpora Saturday Night Market,market,15.5650000,73.7660000,120,0,0,false,"Open-air night market of food, crafts and live music, Saturdays only",food-markets:1.0;city-experiences:0.6,manual
+North Goa coast,Goa,Anjuna Flea Market,market,15.5770000,73.7380000,90,0,0,false,"Weekly Wednesday market of clothes, jewellery and souvenirs by the beach",food-markets:1.0;beaches-coast:0.3,manual
+South Goa coast,Goa,Palolem Beach,beach,15.0086661,74.0203046,150,0,0,true,Crescent bay of calm water fringed by coconut palms,beaches-coast:1.0;adventure-water-sports:0.5;photography:0.6,osm:8111859
+South Goa coast,Goa,Colva Beach,beach,15.2790000,73.9150000,90,0,0,true,"Long sandy beach, the main beach of Salcete",beaches-coast:1.0,manual
+South Goa coast,Goa,Cabo de Rama Fort,fort,15.0886314,73.9216425,60,0,0,true,Cliff-top fort with a working chapel and sweeping sea views,forts-palaces-architecture:1.0;viewpoints-sunsets:0.8,osm:2714781658
+South Goa coast,Goa,Cola Beach,beach,15.0592023,73.9699500,120,0,0,true,Secluded beach with a freshwater lagoon behind the sand,beaches-coast:1.0;lakes-rivers-backwaters:0.5,osm:256543711
+South Goa coast,Goa,Varca Beach,beach,15.2182420,73.9297659,90,0,0,true,Quiet white-sand beach with fishing boats,beaches-coast:1.0,osm:397058899
+South Goa coast,Goa,Patnem Beach,beach,14.9969971,74.0322483,90,0,0,true,Small calm beach south of Palolem,beaches-coast:1.0,osm:128594643
+South Goa coast,Goa,Goa Chitra Museum,museum,15.2648205,73.9413442,90,300,300,false,Museum of thousands of traditional Goan farm and household tools,museums-art-culture:1.0,osm:4270037210
+South Goa coast,Goa,Rachol Seminary and Church,heritage,15.3086608,74.0104604,45,0,0,false,Sixteenth-century seminary with a Baroque church on a riverside hill,sacred-heritage:1.0;heritage-ruins:0.5,osm:519476798
+South Goa coast,Goa,Menezes Braganza House Chandor,heritage,15.2600000,74.0540000,60,100,100,false,Grand Indo-Portuguese mansion with a ballroom and family collections,forts-palaces-architecture:1.0;museums-art-culture:0.6,manual
+Mollem & Dudhsagar,Goa,Dudhsagar Falls,waterfall,15.3156176,74.3142493,180,500,500,true,"Four-tiered milky falls beside the railway line, reached by jeep safari",waterfalls:1.0;forests-nature:0.6;photography:0.8,osm:1241285499
+Mollem & Dudhsagar,Goa,Bhagwan Mahaveer National Park,wildlife,15.3392578,74.2827057,150,50,150,true,"Goa's largest protected forest, home to gaur and hornbills",wildlife-safari:1.0;forests-nature:0.8,osm:19153509
+Mollem & Dudhsagar,Goa,Tambdi Surla Mahadev Temple,heritage,15.4390285,74.2525738,45,0,0,true,"Twelfth-century basalt temple, the oldest surviving in Goa",heritage-ruins:1.0;temples-spiritual:0.6,osm:1209242187
+Mollem & Dudhsagar,Goa,Devil's Canyon,viewpoint,15.3480000,74.2650000,45,0,0,true,Gorge on the Dudhsagar river with rock formations,viewpoints-sunsets:0.8;forests-nature:0.6,manual
+Mollem & Dudhsagar,Goa,Sahakari Spice Farm,garden,15.4000000,74.0300000,120,500,500,true,Spice plantation tour with a traditional Goan lunch,plantations:1.0;food-markets:0.6,manual

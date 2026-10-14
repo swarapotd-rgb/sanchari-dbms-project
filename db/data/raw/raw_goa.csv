@@ -1,0 +1,51 @@
+@id,name,name:en,@lat,@lon,tourism,historic,natural,leisure,amenity,opening_hours,fee,wikidata
+1241285499,Dudhsagar Falls,Dudhsagar Falls,15.3156176,74.3142493,attraction,,,,,,,Q37545
+1658757838,Shri Shantadurga Temple,,15.5130650,73.7698233,,,,,place_of_worship,,,Q7489022
+2637221112,Betalbatim Beach,,15.2931923,73.9077452,,,beach,,,,,Q26793788
+2714781658,Cabo de Rama,Cabo de Rama,15.0886314,73.9216425,,castle,,,,Mo-Su 09:00-17:30,,Q5015741
+4270037210,Goa Chitra museum,,15.2648205,73.9413442,museum,,,,,,,Q5575071
+4288424613,Museum of Goa,,15.5256419,73.7953062,museum,,,,,,,Q24942720
+11623115969,Museum of Christian Art,,15.5012472,73.9069533,museum,,,,,,yes,Q6940795
+13767536542,Pelourinho Novo,,15.4992361,73.9134850,,monument,,,,,,Q139408501
+44016384,Our Lady of the Hill Chapel,,15.5044780,73.9235185,,yes,,,place_of_worship,,,Q28041245
+90307701,Small Vagator Beach,,15.5976558,73.7336081,,,beach,,,,,Q3553247
+128565257,Chapora beach,,15.6067975,73.7394997,,,beach,,,,,Q5073350
+128594643,Patnem Beach,,14.9969971,74.0322483,,,beach,,,,,Q124657446
+194550880,Reis Magos Fort,Reis Magos Fort,15.4964846,73.8091247,attraction,fort,,,,,,Q10283654
+199363593,Mandrem Beach,,15.6600908,73.7136985,,,beach,,,,,Q25346136
+199370623,Harmal Beach,Arambol Beach,15.6793153,73.7057620,,,beach,,,,,Q26794355
+201243802,Our Lady of the Rosary,,15.5018571,73.9048925,,,,,place_of_worship,,,Q20047855
+201243945,Se Cathedral,,15.5037609,73.9121951,,,,,place_of_worship,,,Q2942482
+201244224,Chapel of Saint Catherine of Alexandria,,15.5032655,73.9104111,,,,,place_of_worship,,,Q20047741
+256543711,Cola Beach,,15.0592023,73.9699500,,,beach,,,,,Q107503405
+397058898,Cavelossim Beach,,15.1710460,73.9424661,,,beach,,,,,Q25346007
+397058899,Varca Beach,,15.2182420,73.9297659,,,beach,,,,,Q26795348
+429448104,Our Lady of the Immaculate Conception,,15.4985448,73.8297359,,,,,place_of_worship,00:00-00:00,,Q7111015
+519476798,Rachol Church,Rachol Church,15.3086608,74.0104604,,,,,place_of_worship,,,Q17050432
+634162707,St Bartholomew's Church,,15.5475651,73.8796871,,,,,place_of_worship,,,Q28179735
+673907421,Chapel of St. Francis Xavier,,15.5007654,73.9191959,,yes,,,place_of_worship,,,Q28952563
+1155600557,St. Michael's Church,,15.5899176,73.7641666,,,,,place_of_worship,,,Q7590657
+1182078626,St. Jerome's Church,,15.5895754,73.8183538,,,,,place_of_worship,,,Q60743342
+1209242187,Mahadev temple,Mahadev temple,15.4390285,74.2525738,,archaeological_site,,,place_of_worship,,,Q6732753
+1349157733,Gate of St. Paul's College,,15.4993004,73.9182525,attraction,ruins,,,,,,Q2983675
+1349265057,Ruins of Church of St. Augustine,,15.4996407,73.9065675,,ruins,,,,,,Q30753669
+1349279010,Arch of Viceroys,,15.5057726,73.9136199,attraction,city_gate,,,,,,Q9627847
+1379887485,Science Center,,15.4778172,73.8089378,attraction,,,,,,,Q5575103
+1425373389,Rachol Fort,,15.3090725,74.0055357,,fort,,,,,,Q10283882
+1428309377,Chapel of St. Sebastian,,15.4961772,73.8306731,,,,,place_of_worship,,,Q55714108
+1445696271,Santana Church,,15.4781629,73.8914050,,,,,place_of_worship,,,Q5117203
+1459313559,Chandor Excavated Site,,15.2581432,74.0549606,,archaeological_site,,,,,,Q56458970
+1467001285,Chapel of St. Cajetan,,15.5056228,73.9152069,,,,,place_of_worship,,,Q30627412
+1467001287,Convent of Saint Francis of Assisi,,15.5031946,73.9113799,,,,,place_of_worship,,,Q5117224
+3569663,Basilica of Bom Jesus,,15.5006966,73.9113075,,,,,place_of_worship,,,Q391123
+6411419,Fort Aguada,,15.4924157,73.7739318,attraction,fort,,,,,,Q4991900
+6423947,Baga Beach,,15.5575058,73.7504905,attraction,,beach,,,,,Q26793786
+8111859,Palolem Beach,Palolem Beach,15.0086661,74.0203046,,,beach,,,,,Q2048357
+10854176,Shri Damodar Temple,,15.1865866,74.0945756,,,,,place_of_worship,,,Q24906612
+13414729,Kali Tiger Reserve,,15.1998703,74.4919921,,,,,,,,Q2373398
+15959326,Chapora Fort,,15.6059263,73.7360558,,castle,,,,Mo-Su 09:00-17:00,,Q5073352
+18517885,Churches and Convents of Goa,,15.5029128,73.9114129,,archaeological_site,,,,,,Q15726428
+19059002,Mhadei WLS,,15.5674762,74.1827880,,,,nature_reserve,,,,Q6826847
+19107932,Salim Ali Bird Sanctuary,,15.5165642,73.8538714,,,,nature_reserve,,,,Q4806672
+19153509,Bhagwan Mahaveer National Park,,15.3392578,74.2827057,,,,,,,,Q2397554
+19619039,Netravali WLS,,15.1333909,74.2396126,,,,nature_reserve,,,,Q16887542
