@@ -107,7 +107,7 @@ folder. Piping the file into the container does not work — only its own text g
 sent. Copy the folder in instead:
 
 ```bash
-docker cp db sanchari-db:/db
+docker cp db/. sanchari-db:/db
 docker exec sanchari-db psql -U postgres -d sanchari -f /db/reset.sql
 docker exec sanchari-db psql -U postgres -d sanchari -f /db/run_all.sql
 docker exec sanchari-db psql -U postgres -d sanchari -f /db/verify.sql

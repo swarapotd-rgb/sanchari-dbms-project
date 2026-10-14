@@ -12,7 +12,7 @@
 --        psql -U postgres -d sanchari -f db/run_all.sql
 --
 --    Docker — copy the folder into the container first, then run there:
---        docker cp db sanchari-db:/db
+--        docker cp db/. sanchari-db:/db
 --        docker exec sanchari-db psql -U postgres -d sanchari -f /db/run_all.sql
 --
 --  Piping this one file into the container (Get-Content ... | docker
