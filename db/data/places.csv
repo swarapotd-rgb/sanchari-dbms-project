@@ -1,0 +1,21 @@
+destination,state,name,place_type,latitude,longitude,typical_visit_minutes,fee_indian,fee_foreign,requires_daylight,short_description,categories
+Coorg / Kodagu,Karnataka,Abbey Falls,waterfall,12.4570242,75.7156710,60,15,15,true,"Waterfall in a coffee and spice estate near Madikeri, fullest after the monsoon",waterfalls:1.0;plantations:0.5;photography:0.6
+Coorg / Kodagu,Karnataka,Raja's Seat,viewpoint,12.4138651,75.7370012,45,10,10,true,"Garden viewpoint in Madikeri over misty valleys, famous for sunset",viewpoints-sunsets:1.0;photography:0.8
+Coorg / Kodagu,Karnataka,Madikeri Fort,fort,12.4210515,75.7385704,60,0,0,true,Seventeenth-century hill fort at the centre of Madikeri town,forts-palaces-architecture:1.0;heritage-ruins:0.6
+Coorg / Kodagu,Karnataka,Madikeri Museum,museum,12.4203606,75.7392494,45,0,0,false,Small museum inside Madikeri Fort on Kodava history and culture,museums-art-culture:1.0;heritage-ruins:0.4
+Coorg / Kodagu,Karnataka,Raja's Tomb (Gaddige),heritage,12.4331972,75.7400307,30,0,0,true,Domed tombs of the Kodagu kings in Indo-Islamic style,heritage-ruins:1.0;photography:0.4
+Coorg / Kodagu,Karnataka,Dubare Elephant Camp,wildlife,12.3710485,75.9051815,150,0,0,true,Riverside elephant camp on the Kaveri with bathing and feeding sessions,wildlife-safari:1.0;adventure-water-sports:0.4;family-entertainment:0.5
+Coorg / Kodagu,Karnataka,Mandalpatti,viewpoint,12.5460548,75.7019173,120,0,0,true,"Grassland peak reached by jeep, with views above the clouds",viewpoints-sunsets:1.0;trekking-hiking:0.5;photography:0.7
+Coorg / Kodagu,Karnataka,Kote Betta,trail,12.5365245,75.7575502,240,0,0,true,Trek to one of the highest peaks in Kodagu through shola grassland,trekking-hiking:1.0;forests-nature:0.6
+Coorg / Kodagu,Karnataka,Triveni Sangama,temple,12.3844556,75.5331477,45,0,0,false,Sacred meeting of three rivers beside the Bhagamandala temple,temples-spiritual:1.0;lakes-rivers-backwaters:0.6
+Coorg / Kodagu,Karnataka,Nisargadhama,trail,12.4368905,75.9248807,90,30,30,true,Bamboo-forest island on the Kaveri entered over a hanging bridge,forests-nature:1.0;family-entertainment:0.4
+Hampi,Karnataka,Virupaksha Temple,temple,15.3356817,76.4584389,60,2,2,false,Living Shiva temple with a towering gopuram at the head of Hampi Bazaar,temples-spiritual:1.0;heritage-ruins:0.7
+Hampi,Karnataka,Vijaya Vitthala Temple,heritage,15.3422665,76.4754691,120,40,600,true,Vijayanagara temple complex with the stone chariot and musical pillars,heritage-ruins:1.0;forts-palaces-architecture:0.6;photography:0.8
+Hampi,Karnataka,Lotus Mahal,heritage,15.3202841,76.4713947,45,0,0,true,Two-storey pavilion with lotus-shaped arches inside the Zenana enclosure,forts-palaces-architecture:1.0;heritage-ruins:0.8
+Hampi,Karnataka,Elephant Stables,heritage,15.3211086,76.4727814,30,0,0,true,Row of eleven domed chambers that housed the royal elephants,heritage-ruins:1.0;forts-palaces-architecture:0.6
+Hampi,Karnataka,Queen's Bath,heritage,15.3134157,76.4726756,30,0,0,true,Arched royal bathing hall with a sunken pool and projecting balconies,heritage-ruins:1.0;forts-palaces-architecture:0.5
+Hampi,Karnataka,Mahanavami Dibba,heritage,15.3159637,76.4708430,45,0,0,true,Carved stone platform of the royal enclosure used for the Navaratri festival,heritage-ruins:1.0;photography:0.4
+Hampi,Karnataka,Hemakuta Hill Temples,heritage,15.3329279,76.4593547,60,0,0,true,Granite hill of early temples above Virupaksha and a favourite sunset spot,heritage-ruins:0.8;viewpoints-sunsets:1.0;photography:0.7
+Hampi,Karnataka,Matanga Hill,viewpoint,15.3315694,76.4683843,150,0,0,true,Rocky climb to the highest point in Hampi for sunrise over the ruins,viewpoints-sunsets:1.0;trekking-hiking:0.7;photography:0.8
+Hampi,Karnataka,Archaeological Museum Kamalapur,museum,15.3073753,76.4772089,60,5,5,false,ASI museum with sculptures and a scale model of the Vijayanagara capital,museums-art-culture:1.0;heritage-ruins:0.6
+Hampi,Karnataka,Daroji Sloth Bear Sanctuary,wildlife,15.2752257,76.5636026,180,0,0,true,Boulder-strewn scrub forest where sloth bears are watched from a tower,wildlife-safari:1.0;forests-nature:0.5;photography:0.5
