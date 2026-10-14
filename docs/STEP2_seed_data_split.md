@@ -1,0 +1,226 @@
+# Step 2 - seed data (Requirement 6, the DML step)
+
+Only this step. Same shape as the DDL split: one clean seam, no shared files.
+
+---
+
+## The seam
+
+The DDL split was "my tables / your tables". That does not work for data, because
+`trip` needs `user_account` rows and `itinerary_stop` needs `place` rows.
+
+So the seam for data is **the world vs the people**:
+
+- **Person A (Swara)** seeds everything that exists whether or not anybody uses the app:
+  destinations, places, opening hours, closures, travel legs, embeddings.
+- **Person B (Shreya)** seeds everything a user creates: accounts, profiles, trips,
+  itineraries, feasibility runs, violations, reviews.
+
+A must finish places before B can write itineraries, so A goes first on that one file.
+Everything else runs in parallel.
+
+---
+
+## Person A - the world (target: about 2,300 rows)
+
+| File | Tables | Rows | Where the data comes from |
+|---|---|---|---|
+| `db/06a_seed_reference.sql` | `role`, `transport_mode`, `interest_category`, `destination` | 79 | Typed by hand from `sanchari_dbms.docx` |
+| `db/06b_seed_places.sql` | `place`, `place_category` | ~400 + ~800 | Wikidata / OpenStreetMap export |
+| `db/06c_seed_hours.sql` | `opening_rule`, `closure_window` | ~1000 + ~60 | OSM `opening_hours` tag, ASI monument list |
+| `db/06d_seed_travel_legs.sql` | `travel_leg` | ~600 | Computed from latitude and longitude |
+| `db/06e_seed_embeddings.sql` | `place_embedding` | ~400 | Generated from `place.short_description` |
+
+## Person B - the people (target: about 1,000 rows)
+
+| File | Tables | Rows | Where the data comes from |
+|---|---|---|---|
+| `db/07a_seed_users.sql` | `user_account`, `traveller_profile`, `traveller_interest` | 30 + 30 + 90 | Invented, but realistic |
+| `db/07b_seed_trips.sql` | `trip`, `trip_day`, `itinerary_stop` | 40 + 120 + 350 | Built on A's real places |
+| `db/07c_seed_runs.sql` | `feasibility_run`, `violation` | 60 + 90 | Designed so each of R01-R08 is triggered at least once |
+| `db/07d_seed_reviews.sql` | `review_summary` | 200 | Invented ratings, spread over A's places |
+
+**The part that matters most is `07c`.** Anyone can insert rows. Deliberately building a
+trip that arrives at a monument after last entry, and another that lands on a monsoon
+closure, is what proves the feasibility engine is real. Design about six broken trips on
+purpose and note which rule each one breaks.
+
+---
+
+## How to collect the data - in plain steps
+
+### Step 1 - the small stuff, by hand (about 40 minutes)
+
+Four tables are small enough to type. Make one CSV each in a new `data/` folder.
+
+- `role` - 4 rows: traveller, curator, moderator, admin
+- `transport_mode` - about 6 rows: walk, auto, car, bus, train, ferry, with a typical
+  speed in km/h for each (this is what `06d` uses to compute travel times)
+- `interest_category` - the 20 categories from the Word document, with their slugs
+- `destination` - the 49 destination areas from the Word document, with state and district
+
+### Step 2 - the places, from a free public source (this is the real work)
+
+Two sources, both free and both give you a CSV without an account.
+
+**Wikidata Query Service** - `query.wikidata.org`. Gives you names, coordinates and the
+kind of thing each place is. Run this once per state, change the state code each time:
+
+```sparql
+SELECT ?itemLabel ?lat ?lon ?typeLabel WHERE {
+  ?item wdt:P131* wd:Q1185 .              # Q1185 = Karnataka
+  ?item wdt:P31 ?type .
+  VALUES ?type { wd:Q570116 wd:Q33506 wd:Q23413 wd:Q34038 wd:Q16970 wd:Q44782 }
+  ?item p:P625 [ psv:P625 [
+      wikibase:geoLatitude ?lat ; wikibase:geoLongitude ?lon ] ] .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
+}
+```
+
+Hit the download button and choose CSV.
+
+**Overpass Turbo** - `overpass-turbo.eu`. This is the better source for opening hours,
+because OpenStreetMap actually records them. Run it per destination area:
+
+```
+[out:csv(::lat, ::lon, name, tourism, historic, "natural", opening_hours, fee, website; true; ",")][timeout:90];
+area["name"="Kodagu"]["admin_level"~"5|6"]->.a;
+(
+  node(area.a)["tourism"~"attraction|museum|viewpoint|artwork"];
+  node(area.a)["historic"];
+  node(area.a)["natural"="waterfall"];
+);
+out center;
+```
+
+Export as CSV. Aim for roughly 8 to 10 places per destination area.
+
+**For the fields those two sources do not have** - `typical_visit_minutes`, `fee_indian`,
+`requires_daylight` - fill them by rule, not by guessing one at a time:
+
+| Place type | Visit minutes | Needs daylight |
+|---|---|---|
+| Waterfall, viewpoint, trek | 60-120 | yes |
+| Fort, palace, archaeological site | 90-180 | yes |
+| Museum, gallery | 60-90 | no |
+| Temple, church | 30-60 | no |
+| Market, cafe | 45-60 | no |
+
+For entry fees on protected monuments, the Archaeological Survey of India publishes a
+list of centrally protected monuments with the standard fee bands. Use those, and leave
+`fee_indian` NULL where a place genuinely has no ticket.
+
+### Step 3 - opening hours and closures
+
+Most OSM rows will have an `opening_hours` string like `Tu-Su 09:00-17:00`. Write a small
+Python script that turns each string into one `opening_rule` row per open weekday. Where
+the tag is missing, apply a default by place type and record that you did.
+
+Closures are the interesting part and there are only a few dozen. Three real patterns:
+
+- ASI monuments are closed one fixed weekday (usually Monday or Friday) - a recurring
+  weekly pattern, so it belongs in `opening_rule` as a missing row, not in
+  `closure_window`.
+- Waterfalls and trekking trails close during the monsoon, roughly 1 June to 30 September
+  - a recurring annual `closure_window`.
+- Wildlife sanctuaries close their core zones seasonally - Bandipur and Nagarhole are the
+  obvious ones.
+- National holidays and one-off maintenance closures - a handful, not recurring.
+
+### Step 4 - travel legs, computed not collected
+
+You already have latitude and longitude for every place. For each pair of places inside
+the same destination, compute the straight-line distance with the haversine formula,
+multiply by 1.3 to approximate real roads, and divide by the typical speed of each
+transport mode. Only generate legs for pairs under about 60 km - beyond that they are not
+plausible as same-day hops, and you would end up with tens of thousands of useless rows.
+
+### Step 5 - embeddings
+
+Write a one-line `short_description` for each place (the column `05a` added exists exactly
+for this), then run them through `sentence-transformers` with the `all-MiniLM-L6-v2`
+model. It produces 384 numbers per place, which is why the column is `VECTOR(384)`.
+
+```python
+from sentence_transformers import SentenceTransformer
+m = SentenceTransformer('all-MiniLM-L6-v2')
+vec = m.encode("Abbey Falls, a monsoon-fed waterfall inside a Coorg coffee estate")
+```
+
+---
+
+## How to actually get a CSV into the tables
+
+Do not write four hundred `INSERT` statements by hand, and do not `\copy` straight into
+the real tables - your CSV has place *names* where the table wants destination *ids*.
+
+Use a staging table. Three steps, every time:
+
+```sql
+-- 1. a scratch table shaped exactly like the CSV
+CREATE TEMP TABLE stg_place (
+    name              TEXT,
+    destination_name  TEXT,
+    place_type        TEXT,
+    latitude          NUMERIC,
+    longitude         NUMERIC,
+    opening_hours     TEXT
+);
+
+-- 2. load the file into it (\copy runs on YOUR machine, COPY runs on the server -
+--    inside Docker you want \copy)
+\copy stg_place FROM 'data/places_karnataka.csv' WITH (FORMAT csv, HEADER true)
+
+-- 3. move it across, resolving the name into a real foreign key
+INSERT INTO place (destination_id, name, place_type, latitude, longitude,
+                   typical_visit_minutes, requires_daylight)
+SELECT d.destination_id,
+       s.name,
+       s.place_type,
+       s.latitude,
+       s.longitude,
+       CASE s.place_type
+           WHEN 'waterfall' THEN 90
+           WHEN 'fort'      THEN 120
+           WHEN 'museum'    THEN 75
+           ELSE 60
+       END,
+       s.place_type IN ('waterfall','viewpoint','trek','fort')
+FROM   stg_place   s
+JOIN   destination d ON d.name = s.destination_name
+ON CONFLICT ON CONSTRAINT uq_place_name_destination DO NOTHING;
+```
+
+The join in step 3 is the whole point: it is also a free data-quality check. If a row
+does not join, the destination name in your CSV is wrong, and the row is quietly dropped
+instead of corrupting the table. Count before and after.
+
+The `ON CONFLICT ... DO NOTHING` means you can re-run the file safely while you are still
+fixing things - which you will, several times.
+
+---
+
+## Order of work
+
+**Day 1** - A does `06a` (reference data) and pushes. B cannot start without it, because
+`traveller_interest` needs `interest_category`.
+
+**Day 2-3** - A does `06b` (places) and pushes as soon as it works, even if the hours are
+not in yet. B does `07a` (users and profiles) in parallel.
+
+**Day 4-5** - A does `06c` and `06d`. B does `07b` (trips on real places).
+
+**Day 6** - A does `06e` (embeddings). B does `07c` and `07d`, and this is where the six
+deliberately-broken trips get designed.
+
+**Day 7** - Both: add `\ir` lines to `run_all.sql`, rebuild from empty, and confirm the
+row counts. Then extend `verify.sql` with a row-count section.
+
+## Definition of done
+
+- [ ] `reset.sql` then `run_all.sql` on an empty database still finishes with no errors
+- [ ] Every table has rows; none is left empty
+- [ ] At least one trip triggers each of the eight feasibility rules
+- [ ] `f_place_open_on()` returns a sensible answer for a real place on a real date
+- [ ] A semantic search using `<=>` returns places that actually make sense
+- [ ] `data/` folder committed, so the seed is reproducible and not a one-off
