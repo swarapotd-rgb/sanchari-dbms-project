@@ -1,8 +1,11 @@
--- ============================================================
--- Sanchari — Person B: indexes on trips & checking tables
--- File: db/03b_indexes_trips_checks.sql
--- Run after 01a + 01b (needs the tables to exist).
--- ============================================================
+-- =====================================================================
+--  Sanchari · 03b_indexes_trips_checks.sql
+--  Purpose    : Indexes for Person B's tables — every foreign key column,
+--               plus the indexes specific queries and rules need,
+--               including one PARTIAL index (idx_violation_blocking).
+--  Author     : Shreya
+--  Runs after : 01b_tables_trips_checks.sql
+-- =====================================================================
 
 -- ============ foreign-key indexes ====================================
 --

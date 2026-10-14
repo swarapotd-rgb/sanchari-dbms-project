@@ -1,9 +1,10 @@
--- ============================================================
--- Sanchari - verify.sql
--- Proves the schema is complete and built to convention.
--- This is the output that goes in the lab-record screenshot.
---   psql -d sanchari -f db/verify.sql
--- ============================================================
+-- =====================================================================
+--  Sanchari · verify.sql
+--  Purpose    : Prove the schema is complete and built to convention.
+--               This output is the lab-record screenshot.
+--  Author     : Shreya (counts) · Swara (convention checks 2-5)
+--  Runs after : run_all.sql
+-- =====================================================================
 
 \echo ''
 \echo '=== 1. Headline counts (all must match the Expected line) ==='

@@ -1,14 +1,18 @@
--- ============================================================
--- Sanchari — Person B: ALTER / DROP demo (Requirement 5)
--- File: db/05b_alter_drop_demo_b.sql
--- Shows all three DDL verbs on the trips & checking half.
+-- =====================================================================
+--  Sanchari · 05b_alter_drop_demo_b.sql
+--  Purpose    : Demonstrate ALTER and DROP on the trips & checking half
+--               (requirement 5). Part 1 is a real, permanent change to
+--               trip; Part 2 is a throwaway table put through every kind
+--               of ALTER and then dropped.
+--  Author     : Shreya
+--  Runs after : 05a_alter_drop_demo_a.sql
 --
--- NOTE: updated after Swara's 01b rewrite (7d35dba) — the original
--- demo added an is_cancelled flag and a budget-positive check, but
--- 01b now already has status='cancelled' and ck_trip_budget, so
--- those two would have duplicated existing schema. Swapped for a
--- genuinely new column and constraint instead.
--- ============================================================
+--  NOTE: updated after the 01b rewrite (7d35dba) — the original demo
+--  added an is_cancelled flag and a budget-positive check, but 01b now
+--  already has status='cancelled' and ck_trip_budget, so those two
+--  would have duplicated existing schema. Swapped for a genuinely new
+--  column and constraint instead.
+-- =====================================================================
 
 -- 1. ALTER TABLE ... ADD COLUMN
 --    A short free-text reason, captured when a trip is cancelled or
