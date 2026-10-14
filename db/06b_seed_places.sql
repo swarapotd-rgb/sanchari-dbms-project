@@ -19,7 +19,7 @@
 --  places.csv columns, in this order:
 --    destination, state          exactly as in 06a
 --    name                        unique within its destination
---    place_type                  one of the 11 in ck_place_type
+--    place_type                  one of the 12 in ck_place_type
 --    latitude, longitude
 --    typical_visit_minutes       > 0
 --    fee_indian, fee_foreign     rupees; 0 if free (never blank)
@@ -27,6 +27,10 @@
 --    short_description           one sentence, at least 10 characters
 --    categories                  slug:relevance pairs joined by ';'
 --                                e.g. waterfalls:1.0;photography:0.6
+--    source                      where the row came from: osm:<id> for an
+--                                OpenStreetMap object (raw exports are in
+--                                db/data/raw/), or manual. Kept in the CSV
+--                                for traceability; not loaded into place.
 -- =====================================================================
 
 CREATE TEMP TABLE stg_place (
@@ -41,7 +45,8 @@ CREATE TEMP TABLE stg_place (
     fee_foreign            NUMERIC,
     requires_daylight      BOOLEAN,
     short_description      TEXT,
-    categories             TEXT
+    categories             TEXT,
+    source                 TEXT
 );
 
 \copy stg_place FROM '/db/data/places.csv' WITH (FORMAT csv, HEADER true, ENCODING 'UTF8')

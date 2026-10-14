@@ -377,7 +377,7 @@ CREATE TABLE place (
     -- a fixed vocabulary, so nobody types 'watrfall' and breaks filtering
     CONSTRAINT ck_place_type CHECK (place_type IN
         ('fort','beach','temple','trail','wildlife','waterfall',
-         'museum','market','viewpoint','lake','heritage')),
+         'museum','market','viewpoint','lake','heritage','garden')),
 
     CONSTRAINT ck_place_latitude  CHECK (latitude  BETWEEN -90  AND 90),
     CONSTRAINT ck_place_longitude CHECK (longitude BETWEEN -180 AND 180),

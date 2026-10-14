@@ -99,7 +99,7 @@ Export as CSV. Aim for roughly 8 to 10 places per destination area.
 **For the fields those two sources do not have** - `typical_visit_minutes`, `fee_indian`,
 `requires_daylight` - fill them by rule, not by guessing one at a time:
 
-`place.place_type` only accepts these 11 values (`ck_place_type`). Map whatever the
+`place.place_type` only accepts these 12 values (`ck_place_type`). Map whatever the
 source calls a place onto one of them:
 
 | `place_type` | Use it for | Visit minutes | Needs daylight |
@@ -115,6 +115,7 @@ source calls a place onto one of them:
 | `temple` | temples, shrines | 30-60 | no |
 | `museum` | museums, galleries | 60-90 | no |
 | `market` | markets, bazaars, food streets | 45-60 | no |
+| `garden` | botanical gardens, city parks, spice and coffee gardens | 60-90 | yes |
 
 For entry fees on protected monuments, the Archaeological Survey of India publishes a
 list of centrally protected monuments with the standard fee bands. Use those, and put
