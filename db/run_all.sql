@@ -36,3 +36,6 @@
 
 -- ---------------- seed data (Step 2) ----------------
 \ir 06a_seed_reference.sql
+\ir 06b_seed_places.sql
+\ir 06c_seed_hours.sql
+\ir 06d_seed_travel_legs.sql
