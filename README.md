@@ -62,8 +62,7 @@ value, it is a vector.
 
 ```
 db/              SQL — extensions, tables, indexes, views, run/reset/verify scripts
-docs/diagrams/   ER diagram (Chen) and relational schema (crow's foot), PNG + SVG,
-                 and the script that draws them
+docs/diagrams/   ER diagram (Chen) and relational schema (crow's foot)
 docs/            roadmap, work split, setup verification
 ```
 
