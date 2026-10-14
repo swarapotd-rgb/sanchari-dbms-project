@@ -33,3 +33,6 @@
 
 \ir 05a_alter_drop_demo_a.sql
 \ir 05b_alter_drop_demo_b.sql
+
+-- ---------------- seed data (Step 2) ----------------
+\ir 06a_seed_reference.sql
