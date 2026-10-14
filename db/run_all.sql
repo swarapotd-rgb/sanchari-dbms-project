@@ -39,3 +39,4 @@
 \ir 06b_seed_places.sql
 \ir 06c_seed_hours.sql
 \ir 06d_seed_travel_legs.sql
+\ir 06e_seed_embeddings.sql
