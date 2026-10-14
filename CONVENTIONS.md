@@ -17,6 +17,12 @@ mutual agreement — a change here can break the other person's foreign keys.
 | Primary key | `<table>_id` | `place_id` in table `place` |
 | Foreign key column | **same name as the key it points to** | `place_id` in `itinerary_stop` |
 | Two FKs to the same table | prefix with the role | `from_place_id`, `to_place_id` |
+| FK whose role differs from the plain link | prefix with the role, even if there is only one | `owner_user_id`, `primary_mode_id`, `base_destination_id` |
+
+The third row is the only exception to the second-last rule. Use it when the column
+says *what part* the other row plays, not just *which* row it is: a trip has an
+**owner** (other users may edit it later), a **primary** transport mode (individual
+legs may use others), and a day has a **base** destination (stops may lie outside it).
 | View | `v_<what_it_shows>` | `v_place_open_on` |
 | Index | `idx_<table>_<columns>` | `idx_opening_rule_place_day` |
 
