@@ -25,7 +25,7 @@ Everything else runs in parallel.
 
 | File | Tables | Rows | Where the data comes from |
 |---|---|---|---|
-| `db/06a_seed_reference.sql` | `role`, `transport_mode`, `interest_category`, `destination` | 79 | Typed by hand from `sanchari_dbms.docx` |
+| `db/06a_seed_reference.sql` | `role`, `transport_mode`, `interest_category`, `destination` | 77 | Typed by hand from `sanchari_dbms.docx` — **done** |
 | `db/06b_seed_places.sql` | `place`, `place_category` | ~400 + ~800 | Wikidata / OpenStreetMap export |
 | `db/06c_seed_hours.sql` | `opening_rule`, `closure_window` | ~1000 + ~60 | OSM `opening_hours` tag, ASI monument list |
 | `db/06d_seed_travel_legs.sql` | `travel_leg` | ~600 | Computed from latitude and longitude |
@@ -53,9 +53,10 @@ purpose and note which rule each one breaks.
 
 Four tables are small enough to type. Make one CSV each in a new `data/` folder.
 
-- `role` - 4 rows: traveller, curator, moderator, admin
-- `transport_mode` - about 6 rows: walk, auto, car, bus, train, ferry, with a typical
-  speed in km/h for each (this is what `06d` uses to compute travel times)
+- `role` - 3 rows: `Traveller`, `Curator`, `Admin` (`ck_role_name_set` allows only these)
+- `transport_mode` - 5 rows: `car`, `bike`, `bus`, `train`, `walk`
+  (`ck_transport_mode_name` allows only these), with a typical speed in km/h for each
+  (this is what `06d` uses to compute travel times)
 - `interest_category` - the 20 categories from the Word document, with their slugs
 - `destination` - the 49 destination areas from the Word document, with state and district
 
@@ -98,17 +99,27 @@ Export as CSV. Aim for roughly 8 to 10 places per destination area.
 **For the fields those two sources do not have** - `typical_visit_minutes`, `fee_indian`,
 `requires_daylight` - fill them by rule, not by guessing one at a time:
 
-| Place type | Visit minutes | Needs daylight |
-|---|---|---|
-| Waterfall, viewpoint, trek | 60-120 | yes |
-| Fort, palace, archaeological site | 90-180 | yes |
-| Museum, gallery | 60-90 | no |
-| Temple, church | 30-60 | no |
-| Market, cafe | 45-60 | no |
+`place.place_type` only accepts these 11 values (`ck_place_type`). Map whatever the
+source calls a place onto one of them:
+
+| `place_type` | Use it for | Visit minutes | Needs daylight |
+|---|---|---|---|
+| `waterfall` | falls, cascades | 60-120 | yes |
+| `viewpoint` | lookouts, peaks, sunset points | 30-60 | yes |
+| `trail` | treks, hikes, nature walks | 120-240 | yes |
+| `wildlife` | national parks, sanctuaries, safaris | 120-240 | yes |
+| `beach` | beaches | 60-120 | yes |
+| `lake` | lakes, dams, river fronts, backwaters | 45-90 | yes |
+| `fort` | forts | 90-180 | yes |
+| `heritage` | palaces, ruins, archaeological sites, rock-cut caves, churches and mosques of historic note | 60-180 | yes |
+| `temple` | temples, shrines | 30-60 | no |
+| `museum` | museums, galleries | 60-90 | no |
+| `market` | markets, bazaars, food streets | 45-60 | no |
 
 For entry fees on protected monuments, the Archaeological Survey of India publishes a
-list of centrally protected monuments with the standard fee bands. Use those, and leave
-`fee_indian` NULL where a place genuinely has no ticket.
+list of centrally protected monuments with the standard fee bands. Use those, and put
+`0` where a place genuinely has no ticket — `fee_indian` and `fee_foreign` are
+`NOT NULL DEFAULT 0`, so NULL is rejected.
 
 ### Step 3 - opening hours and closures
 
@@ -185,7 +196,8 @@ SELECT d.destination_id,
            WHEN 'museum'    THEN 75
            ELSE 60
        END,
-       s.place_type IN ('waterfall','viewpoint','trek','fort')
+       s.place_type IN ('waterfall','viewpoint','trail','wildlife','beach',
+                        'lake','fort','heritage')
 FROM   stg_place   s
 JOIN   destination d ON d.name = s.destination_name
 ON CONFLICT ON CONSTRAINT uq_place_name_destination DO NOTHING;
