@@ -1,0 +1,74 @@
+@id,name,name:en,@lat,@lon,tourism,historic,natural,leisure,amenity,opening_hours,fee,wikidata
+411451909,Ranganathittu Bird Sanctuary,,12.4238524,76.6553081,attraction,,,,,,,Q3846171
+937674757,Kadu Malleshwara Temple,,13.0049660,77.5714462,,,,,place_of_worship,,,Q6345722
+1467937186,Shri Someshwara Temple,,12.9364646,77.6140120,,,,,place_of_worship,,,Q16934416
+1530688116,Milagres Church,,13.3956935,74.7359642,,,,,place_of_worship,,,Q15253371
+3668309489,Mahishasura,,12.2750725,76.6709592,artwork,monument,,,,,,Q663318
+3914219611,Kappe Arabatta Shilashasana,,15.9221735,75.6858410,,ruins,,,,,,Q6367138
+3948562480,St. Mary's Orthodox Valiapalli,,13.0571395,77.5481770,,,,,place_of_worship,,,Q7590380
+4950994667,Badami Cave Temples,,15.9183722,75.6843849,attraction,,,,,,,Q825236
+15802464,Lalbagh Botanical Gardens,,12.9488929,77.5866794,attraction,,,park,,,,Q200711
+22895320,Cubbon Park,,12.9741742,77.5934146,,,,park,,,,Q3633776
+24360210,Kukkarahalli Kere,,12.3103703,76.6320824,,,water,,,"Mo-Su 05:30-10:00,15:30-19:00",,Q6442499
+28091209,Yellamallappa Chetty Lake,,13.0270667,77.7279363,,,water,,,,,Q87768635
+28275837,St. Philomena's Church,,12.3210355,76.6583029,,,,,place_of_worship,,,Q1436463
+28950421,Sri Chamarajendra Zoological Garden,,12.3007753,76.6675761,zoo,,,,,,,Q3523523
+29459362,ISKCON Sri Radha Krishna-Chandra Temple,ISKCON Sri Radha Krishna-Chandra Temple,13.0100800,77.5511324,,,,,place_of_worship,,,Q4500903
+36884560,Freedom Park,,12.9774067,77.5819036,,,,park,,,,Q5500576
+38751028,Tippu's Summer Palace,,12.9594759,77.5737979,attraction,castle,,,,,,Q7809034
+38751029,Bangalore Fort,,12.9629032,77.5757838,,fort,,,,,,Q4855049
+38773816,Saint Mark's Cathedral,,12.9760400,77.6003892,,,,,place_of_worship,,,Q19898479
+85568390,Lingambudhi Kere,Lingambudhi Lake,12.2710812,76.6112293,,,water,,,,,Q6553754
+112580278,Infant Jesus Church,,12.9536356,77.6188074,,,,,place_of_worship,,,Q15378772
+121883110,National Gallery of Modern Art,,12.9894478,77.5881204,museum,,,,,Tu-Su 11:00-18:00,yes,Q17077814
+133881869,The Holy Trinity Church,,12.9720575,77.6205351,,,,,place_of_worship,,,Q5886431
+133881879,East Parade Church,,12.9739942,77.6144840,,,,,place_of_worship,,,Q22000988
+143384387,Bangalore Palace,,12.9986075,77.5919876,attraction,castle,,,,,,Q3520057
+151377044,Venugopala Swami Temple,,12.4441341,76.5670349,attraction,archaeological_site,,,,,,Q7920543
+151380454,Brindavan Gardens,,12.4281143,76.5737994,,,,garden,,,,Q3520916
+151380456,Brindavan Gardens,,12.4209336,76.5744301,,,,garden,,,,Q3520916
+161984944,Dharmaraya Swamy Temple,,12.9654647,77.5833621,,,,,place_of_worship,,,Q2065042
+169478282,Shettihalli Wildlife Sanctuary,,13.8485050,75.4786748,,,,nature_reserve,,,,Q109974510
+172924463,St. Francis Xavier's Cathedral,,12.9926177,77.6112538,,,,,place_of_worship,,,Q7588004
+216861303,Lakshmi Devi Temple,,13.0958336,76.0040646,attraction,,,,place_of_worship,,,Q4832985
+222420165,Banashankari Temple,,15.8871508,75.7046516,,,,,place_of_worship,,,Q4853950
+224877429,Hoysaleswara Temple,Hoysaleswara Temple,13.2125828,75.9942492,attraction,archaeological_site,,,,,no,Q3517561
+232780058,Lumbini Gardens,,13.0432927,77.6097958,,,,park,,,,Q6703129
+299877333,Bugle Rock Park,,12.9421433,77.5692538,,,,park,,,,Q4986214
+312174968,University Folklore Museum,,12.3134034,76.6224487,museum,,,,,,,Q5464421
+327551780,Visvesvaraya Industrial and Technology Museum,Visvesvaraya Industrial and Technological Museum,12.9752241,77.5964289,museum,,,,,Mo-Su 10:00-18:00,yes,Q3537014
+346209154,St. John's Church,,12.9917604,77.6129946,,,,,place_of_worship,,,Q19898476
+347446474,Lakshmi Venkateshwara Temple,,12.9595821,77.5741211,,,,,place_of_worship,,,Q6433914
+348134392,Dwadasha Jyotirlinga Temple,,12.8998645,77.5059316,,,,,place_of_worship,,,Q17018520
+351342259,Rice Memorial Church,,12.9711404,77.5801439,,,,,place_of_worship,,,Q24935415
+365150042,Chennakeshava Temple,Chennakeshava Temple,13.1629061,75.8602836,attraction,,,,place_of_worship,,,Q3536222
+370390346,St. Andrews Church,,12.9795047,77.6042904,,,,,place_of_worship,,,Q19898472
+389065979,Bhutanatha Temple,,15.9208312,75.6877410,,,,,place_of_worship,,,Q3517721
+400483216,St Mary's Basilica,,12.9844117,77.6042729,,,,,place_of_worship,,,Q7590089
+532166925,Richmond Town Methodist Church,,12.9637678,77.6029183,,,,,place_of_worship,,,Q7331016
+656323590,Mysore Palace,,12.3052544,76.6560736,,castle,,,,,,Q456575
+670641254,Sharavati Valley WLS,,14.0511267,74.7981312,,,,nature_reserve,,,,Q85800682
+712309876,Fossilized Tree,,12.9504783,77.5838806,,,,park,,,,Q6972778
+777239923,"Veera Narayana Temple, Belavadi",,13.2820523,75.9956874,,archaeological_site,,,,,,Q19899095
+913953132,Mount Rosary Church,,13.3869411,74.7359127,,,,,place_of_worship,,,Q6923277
+1010810236,Hebbal Lake,,12.3580063,76.6110679,,,water,,,,,Q106238322
+1022341006,Thyavarekoppa Lion and Tiger Safari,,13.9698957,75.4885465,zoo,,,,,,,Q7859688
+1062372961,Kadu Malleshwara Temple,,13.0050762,77.5717397,,,,,place_of_worship,,,Q6345722
+1124083558,Museum of Art and Photography,,12.9745270,77.5968523,museum,,,,,,yes,Q85787143
+1160675960,Prasanna Veeranjaneya Temple,,13.0089812,77.5466473,,,,,place_of_worship,,,Q107669501
+1192131943,Regional Museum of Natural History Mysore,,12.3057045,76.6744243,museum,,,,,,,Q7309109
+1303003799,St. Paul's Church,,12.9818739,77.6051116,,,,,place_of_worship,,,Q19898480
+1307949932,Sri Gavigangadhareshwara Swamy Temple,Sri Gavigangadhareshwara Swamy Temple,12.9482335,77.5630041,,,,,place_of_worship,"Mo-Su 07:00-12:30, 17:00-20:30",,Q5528052
+1857615,Halasuru lake,Ulsoor Lake,12.9824723,77.6193014,,,water,,,,,Q30587793
+2310424,Karanji Kere,,12.3020503,76.6736566,,,water,,,,,Q6368492
+3507925,Puttenhalli Lake,,12.8903874,77.5871037,,,water,,,,,Q17084588
+5284317,Vidhana Soudha,,12.9797245,77.5906379,attraction,,,,,,,Q283257
+5422792,Sri Chamundeshwari Temple,,12.2724738,76.6707252,,,,,place_of_worship,,,Q1061529
+6030715,Sankey Tank,,13.0099908,77.5748627,,,water,,,,,Q7331115
+8250847,Lal Bahadur Shastri Nagar Lake,,12.9678960,77.6782027,,,water,,,,,Q7924608
+9329660,Ranganathittu Bird Sanctuary,,12.3974342,76.6890765,,,,nature_reserve,,,,Q3846171
+9329791,Bhadra WLS/Tiger Reserve,,13.5710774,75.6317282,,,,nature_reserve,,,,Q4900541
+9399178,Wayanad WLS,,11.9027204,76.0777588,,,,,,,,Q3595858
+13414729,Kali Tiger Reserve,,15.1998703,74.4919921,,,,,,,,Q2373398
+19751547,Bellandur Lake,,12.9362310,77.6614871,,,water,,,,,Q4883488
+21656433,Brahmagiri Wildlife Sanctuary,,12.0405111,75.8963763,,,,nature_reserve,,,,Q4955532
