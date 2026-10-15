@@ -67,7 +67,7 @@ SELECT DISTINCT ON (t.trip_id)
     r.feasibility_score
 FROM      trip            t
 LEFT JOIN feasibility_run r ON r.trip_id = t.trip_id
-ORDER BY  t.trip_id, r.run_at DESC NULLS LAST;
+ORDER BY  t.trip_id, r.run_at DESC NULLS LAST, r.run_id DESC;   -- run_id breaks ties inside one transaction
 
 COMMENT ON VIEW v_trip_health IS
     'Each trip with its most recent feasibility run. Feeds the trip dashboard.';
