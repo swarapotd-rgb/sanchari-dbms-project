@@ -42,3 +42,4 @@
 \ir 06e_seed_embeddings.sql
 \ir 07a_seed_users.sql
 \ir 07b_seed_trips.sql
+\ir 07d_seed_reviews.sql
