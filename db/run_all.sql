@@ -41,3 +41,4 @@
 \ir 06d_seed_travel_legs.sql
 \ir 06e_seed_embeddings.sql
 \ir 07a_seed_users.sql
+\ir 07b_seed_trips.sql

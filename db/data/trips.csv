@@ -1,0 +1,35 @@
+trip_code,owner_email,title,origin_city,start_date,end_date,party_size,budget_cap,primary_mode,status,expect
+T01,ananya.rao@example.com,Coorg coffee weekend,Bengaluru,2026-08-22,2026-08-23,2,14000,car,completed,pass
+T02,meghana.gowda@example.com,Mysuru heritage day,Mysuru,2026-09-05,2026-09-05,2,6500,car,completed,pass
+T03,vikram.reddy@example.com,Hyderabad in two days,Hyderabad,2026-09-12,2026-09-13,1,,car,completed,pass
+T04,priya.iyer@example.com,Temples of Madurai,Chennai,2026-08-29,2026-08-29,2,5000,car,completed,pass
+T05,arjun.nair@example.com,Fort Kochi walk,Kochi,2026-09-19,2026-09-20,2,14000,car,completed,pass
+T06,nikhil.varma@example.com,Vizag coast weekend,Visakhapatnam,2026-10-03,2026-10-04,3,19000,car,completed,pass
+T07,lakshmi.krishnan@example.com,Kanchipuram temple day,Madurai,2026-09-26,2026-09-26,2,4000,bus,completed,pass
+T08,deepa.hegde@example.com,Chalukya trail,Hubballi,2026-10-09,2026-10-10,2,8500,bus,completed,pass
+T09,sneha.kulkarni@example.com,Kabini and Nagarhole,Bengaluru,2026-08-15,2026-08-16,2,19500,car,completed,pass
+T10,rahul.menon@example.com,Gokarna beach trek,Bengaluru,2026-11-14,2026-11-15,2,10000,bike,validated,pass
+T11,arjun.nair@example.com,Alleppey backwaters,Kochi,2026-12-05,2026-12-06,2,18000,car,locked,pass
+T12,karthik.subramanian@example.com,Ooty and Coonoor,Coimbatore,2026-12-19,2026-12-20,2,15500,car,validated,pass
+T13,divya.menon@example.com,Kovalam and the capital,Thiruvananthapuram,2027-01-09,2027-01-10,2,12500,car,draft,pass
+T14,siddharth.rao@example.com,Chennai museums and the Marina,Chennai,2026-11-21,2026-11-21,1,,car,validated,pass
+T15,pooja.shenoy@example.com,Old Goa and the north coast,Panaji,2026-12-11,2026-12-12,2,16000,car,validated,pass
+T16,shruti.bhat@example.com,Udupi and St Mary's Island,Udupi,2026-11-28,2026-11-28,2,6000,car,draft,pass
+T17,manoj.pillai@example.com,Athirappilly falls day,Thrissur,2026-11-07,2026-11-07,4,11500,car,draft,pass
+T18,sana.khan@example.com,Old city Hyderabad,Hyderabad,2027-01-23,2027-01-23,3,12000,car,draft,pass
+T19,ganesh.iyer@example.com,Thanjavur Chola temples,Tiruchirappalli,2026-12-26,2026-12-27,2,9500,car,validated,pass
+T20,varun.krishna@example.com,Mahabalipuram day out,Chennai,2026-11-29,2026-11-29,2,6000,car,draft,pass
+T21,neha.agarwal@example.com,Wayanad family holiday,Bengaluru,2026-12-24,2026-12-26,4,39000,car,locked,pass
+T22,aditya.joshi@example.com,Munnar tea country,Bengaluru,2027-01-16,2027-01-17,2,15000,car,draft,pass
+T23,karthik.subramanian@example.com,Kodaikanal lakes,Coimbatore,2027-02-06,2027-02-07,2,14000,car,draft,pass
+T24,kiran.rao@example.com,Vijayawada weekend,Vijayawada,2026-11-07,2026-11-08,2,,car,draft,pass
+T25,anjali.desai@example.com,Dudhsagar in the rains,Bengaluru,2026-07-18,2026-07-18,2,,car,cancelled,cancelled
+T26,harish.kumar@example.com,Pondicherry break,Chennai,2026-11-01,2026-11-01,2,7000,car,cancelled,cancelled
+T27,meghana.gowda@example.com,Madikeri on a Monday,Mysuru,2026-12-14,2026-12-14,2,7000,car,draft,R01
+T28,deepa.hegde@example.com,Hampi museum too late,Hubballi,2026-11-21,2026-11-21,2,5000,car,draft,R02
+T29,rahul.menon@example.com,Kote Betta monsoon trek,Bengaluru,2027-07-17,2027-07-17,2,7000,bike,draft,R03
+T30,ananya.rao@example.com,Rushed Coorg morning,Bengaluru,2026-12-05,2026-12-05,2,7500,car,draft,R04
+T31,vikram.reddy@example.com,Speed tour of Mysuru,Hyderabad,2026-12-19,2026-12-19,1,3000,car,draft,R05
+T32,aditya.joshi@example.com,Hemakuta sunset that runs late,Bengaluru,2026-12-12,2026-12-12,2,5000,car,draft,R06
+T33,aishwarya.pillai@example.com,Shivamogga in one day,Kochi,2026-11-28,2026-11-28,2,6000,car,draft,R07
+T34,neha.agarwal@example.com,Mysuru family on a shoestring,Bengaluru,2027-01-30,2027-01-30,4,3000,car,draft,R08

@@ -1,0 +1,52 @@
+trip_code,day_number,base_destination,day_start_time,day_end_time
+T01,1,Coorg / Kodagu,07:30,20:00
+T01,2,Coorg / Kodagu,07:30,20:00
+T02,1,Mysuru & Srirangapatna,08:00,20:30
+T03,1,Hyderabad,07:00,21:30
+T03,2,Hyderabad,07:00,21:30
+T04,1,Madurai,07:00,20:30
+T05,1,Kochi / Fort Kochi,08:30,21:00
+T05,2,Kochi / Fort Kochi,08:30,21:00
+T06,1,Visakhapatnam,07:00,21:30
+T06,2,Visakhapatnam,07:00,21:30
+T07,1,Kanchipuram,06:00,20:00
+T08,1,Badami-Aihole-Pattadakal,07:00,20:00
+T08,2,Badami-Aihole-Pattadakal,07:00,20:00
+T09,1,Bandipur-Nagarhole,06:00,20:00
+T09,2,Bandipur-Nagarhole,06:00,20:00
+T10,1,Gokarna,06:00,21:00
+T10,2,Gokarna,06:00,21:00
+T11,1,Alappuzha & Kumarakom,08:30,21:00
+T11,2,Alappuzha & Kumarakom,08:30,21:00
+T12,1,Ooty & Coonoor,08:00,20:00
+T12,2,Ooty & Coonoor,08:00,20:00
+T13,1,Thiruvananthapuram & Kovalam,08:30,20:30
+T13,2,Thiruvananthapuram & Kovalam,08:30,20:30
+T14,1,Chennai,09:00,21:30
+T15,1,Panaji & Old Goa,08:00,23:59
+T15,2,North Goa coast,08:00,23:59
+T16,1,Udupi-Malpe,07:00,20:30
+T17,1,Athirappilly,07:00,20:00
+T18,1,Hyderabad,08:30,21:30
+T19,1,Thanjavur,06:00,20:30
+T19,2,Thanjavur,06:00,20:30
+T20,1,Mahabalipuram,06:30,21:00
+T21,1,Wayanad,08:00,20:30
+T21,2,Wayanad,08:00,20:30
+T21,3,Wayanad,08:00,20:30
+T22,1,Munnar,06:00,21:00
+T22,2,Munnar,06:00,21:00
+T23,1,Kodaikanal,08:00,20:00
+T23,2,Kodaikanal,08:00,20:00
+T24,1,Vijayawada & Amaravati,08:00,21:00
+T24,2,Vijayawada & Amaravati,08:00,21:00
+T25,1,Mollem & Dudhsagar,08:00,21:00
+T26,1,Puducherry,07:30,20:30
+T27,1,Coorg / Kodagu,08:00,20:30
+T28,1,Hampi,07:00,20:00
+T29,1,Coorg / Kodagu,06:00,21:00
+T30,1,Coorg / Kodagu,07:30,20:00
+T31,1,Mysuru & Srirangapatna,07:00,21:30
+T32,1,Hampi,06:00,21:00
+T33,1,Shivamogga & Jog Falls,08:00,20:00
+T34,1,Mysuru & Srirangapatna,08:00,20:30
