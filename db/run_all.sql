@@ -43,3 +43,10 @@
 \ir 07a_seed_users.sql
 \ir 07b_seed_trips.sql
 \ir 07d_seed_reviews.sql
+
+-- ---------------- engine and triggers (Step 3) ----------------
+\ir 08a_feasibility_engine.sql
+\ir 08b_triggers.sql
+
+-- ---------------- engine output: feasibility_run, violation ----------------
+\ir 09_run_feasibility.sql

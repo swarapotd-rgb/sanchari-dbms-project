@@ -21,6 +21,23 @@ Times are compared as plain wall-clock times on the stop's own date.
 
 R01 and R03 come first for a stop: if a place is shut, R02 is not checked for it.
 
+## How the engine reports a result
+
+`CALL p_check_trip(trip_id)` (in `db/08a_feasibility_engine.sql`) writes one
+`feasibility_run` row and one `violation` row per failure.
+
+- **Where a violation points:** R01–R06 name the exact stop (trip, day, stop number).
+  R07 belongs to a whole day and R08 to the whole trip, so their stop columns are empty
+  and the message says which day.
+- **Score:** 100 − 25 per blocking violation − 10 per warning, never below 0. It is
+  copied to `trip.feasibility_score`.
+- **Trip status:** a draft, validated or blocked trip becomes `blocked` if any blocking
+  rule failed, otherwise `validated`. Locked and completed trips keep their status.
+- **rules_evaluated:** 8, or less when R07 (owner has no travel limit) or R08 (trip has
+  no budget) has nothing to compare against.
+- **Refused:** a trip that does not exist or is cancelled raises an error and writes
+  nothing.
+
 ## What `estimated_cost` holds
 
 The cost of one stop for the whole party: entry fee (`fee_indian` × `party_size`) plus

@@ -21,9 +21,17 @@ SELECT
       WHERE table_schema = 'public')                                   AS views,
     (SELECT count(*) FROM pg_proc p
        JOIN pg_namespace n ON n.oid = p.pronamespace
-      WHERE n.nspname = 'public' AND p.proname LIKE 'f\_%')            AS functions;
+      WHERE n.nspname = 'public' AND p.prokind = 'f'
+        AND p.proname LIKE 'f\_%')                                     AS functions,
+    (SELECT count(*) FROM pg_proc p
+       JOIN pg_namespace n ON n.oid = p.pronamespace
+      WHERE n.nspname = 'public' AND p.prokind = 'p')                  AS procedures,
+    (SELECT count(*) FROM pg_trigger tg
+       JOIN pg_class c ON c.oid = tg.tgrelid
+       JOIN pg_namespace n ON n.oid = c.relnamespace
+      WHERE n.nspname = 'public' AND NOT tg.tgisinternal)              AS triggers;
 
-\echo 'Expected:  tables 19 | foreign_keys 24 | idx_indexes 22 | views 4 | functions 1'
+\echo 'Expected:  tables 19 | foreign_keys 24 | idx_indexes 22 | views 4 | functions 2 | procedures 1 | triggers 2'
 
 
 \echo ''
@@ -122,8 +130,8 @@ WHERE      n.nspname = 'public' AND c.contype = 'f'
 ORDER BY   ct.relname, c.conname;
 
 \echo ''
-\echo '=== 8. Rows in every table (seed data, Step 2) ==='
-\echo 'Grows as each 06x / 07x seed file is added to run_all.sql.'
+\echo '=== 8. Rows in every table ==='
+\echo 'feasibility_run and violation are filled by 09_run_feasibility.sql.'
 
 SELECT t.table_name,
        (xpath('/row/n/text()',
@@ -132,6 +140,25 @@ SELECT t.table_name,
 FROM   information_schema.tables t
 WHERE  t.table_schema = 'public' AND t.table_type = 'BASE TABLE'
 ORDER  BY t.table_name;
+
+\echo ''
+\echo '=== 9. Feasibility results: every trip with a problem ==='
+\echo 'From the latest run of each trip. Expect exactly 8 rows - the test'
+\echo 'trips, one rule each: R01 R02 R03 R04 R05 R06 R07 R08.'
+
+SELECT t.trip_id,
+       t.title,
+       t.status,
+       r.feasibility_score                                  AS score,
+       string_agg(v.rule_code || ' ' || v.severity, ', '
+                  ORDER BY v.violation_no)                  AS rules_failed
+FROM   trip t
+JOIN   feasibility_run r ON r.trip_id = t.trip_id
+                        AND r.run_id  = (SELECT max(run_id) FROM feasibility_run
+                                          WHERE trip_id = t.trip_id)
+JOIN   violation       v ON v.run_id  = r.run_id
+GROUP  BY t.trip_id, t.title, t.status, r.feasibility_score
+ORDER  BY t.trip_id;
 
 \echo ''
 \echo '=== Done. Sections 2-5 must all report zero rows. ==='

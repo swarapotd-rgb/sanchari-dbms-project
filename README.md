@@ -53,7 +53,8 @@ value, it is a vector.
 - **16 entities · 20 relationships · 19 tables · 24 foreign keys · 135 columns**
   (133 from `CREATE TABLE`, plus `place.short_description` and `trip.status_note`
   added by the ALTER demos)
-- Eight feasibility checks (R01–R08), each traceable to the tables it reads
+- Eight feasibility checks (R01–R08), each traceable to the tables it reads —
+  run by the procedure `p_check_trip` (`db/08a`), defined in `docs/feasibility_rules.md`
 - ER diagram and relational schema in `docs/diagrams/`
 
 ---
@@ -61,7 +62,8 @@ value, it is a vector.
 ## Repository layout
 
 ```
-db/              SQL — extensions, tables, indexes, views, run/reset/verify scripts
+db/              SQL — extensions, tables, indexes, views, seed data, engine,
+                 triggers, run/reset/verify scripts
 docs/diagrams/   ER diagram (Chen) and relational schema (crow's foot)
 docs/            roadmap, work split, setup verification
 ```
@@ -115,7 +117,8 @@ docker exec sanchari-db psql -U postgres -d sanchari -f /db/verify.sql
 
 (With native psql, from the repo root: `psql -U postgres -d sanchari -f db/run_all.sql`.)
 `verify.sql` must report **19 tables · 24 foreign keys · 22 indexes · 4 views ·
-1 function**, and zero rows in its checks 2–5.
+2 functions · 1 procedure · 2 triggers**, zero rows in its checks 2–5, and in
+check 9 exactly the 8 test trips, each failing its one rule.
 
 Re-run `docker cp` after pulling changes — the copy in the container does not update
 on its own.
