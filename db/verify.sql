@@ -161,4 +161,14 @@ GROUP  BY t.trip_id, t.title, t.status, r.feasibility_score
 ORDER  BY t.trip_id;
 
 \echo ''
+\echo '=== 10. Reviews linked to MongoDB ==='
+\echo 'Every review must carry the _id of its MongoDB document.'
+\echo 'Expect: total 154 | linked 154 | distinct_ids 154'
+
+SELECT count(*)                     AS total,
+       count(mongo_doc_id)          AS linked,
+       count(DISTINCT mongo_doc_id) AS distinct_ids
+FROM   review_summary;
+
+\echo ''
 \echo '=== Done. Sections 2-5 must all report zero rows. ==='

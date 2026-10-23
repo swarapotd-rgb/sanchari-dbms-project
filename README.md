@@ -64,6 +64,7 @@ value, it is a vector.
 ```
 db/              SQL — extensions, tables, indexes, views, seed data, engine,
                  triggers, run/reset/verify scripts
+mongo/           MongoDB — the review documents, their validator and indexes, demo queries
 docs/diagrams/   ER diagram (Chen) and relational schema (crow's foot)
 docs/            roadmap, work split, setup verification
 ```
@@ -122,6 +123,27 @@ check 9 exactly the 8 test trips, each failing its one rule.
 
 Re-run `docker cp` after pulling changes — the copy in the container does not update
 on its own.
+
+### Load the MongoDB reviews
+
+The written part of every review (title, text, aspect ratings, tags, photos) lives in
+MongoDB; `review_summary.mongo_doc_id` in PostgreSQL points at it. Create the container
+once:
+
+```bash
+docker run --name sanchari-mongo -p 27017:27017 -v sanchari_mongo:/data/db -d mongo:7
+```
+
+Then, and again after pulling changes:
+
+```bash
+docker cp mongo/. sanchari-mongo:/mongo
+docker exec sanchari-mongo mongosh sanchari --quiet /mongo/seed_reviews.js
+docker exec sanchari-mongo mongosh sanchari --quiet /mongo/queries.js
+```
+
+`seed_reviews.js` must end with **documents: 154** and **indexes: 6**. `verify.sql`
+check 10 confirms all 154 reviews carry a MongoDB id. More detail in `mongo/README.md`.
 
 Full setup instructions, including non-Docker paths and troubleshooting, are in
 `docs/`.

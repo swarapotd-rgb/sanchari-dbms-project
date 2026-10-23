@@ -1,0 +1,155 @@
+email,destination,place,visited_on,mongo_doc_id
+ananya.rao@example.com,Coorg / Kodagu,Abbey Falls,2026-08-22,6a8b514053616e6368000001
+ananya.rao@example.com,Coorg / Kodagu,Raja's Seat,2026-08-22,6a8b514053616e6368000002
+ananya.rao@example.com,Coorg / Kodagu,Madikeri Fort,2026-08-22,6a8b514053616e6368000003
+ananya.rao@example.com,Coorg / Kodagu,Madikeri Museum,2026-08-22,6a8b514053616e6368000004
+ananya.rao@example.com,Coorg / Kodagu,Dubare Elephant Camp,2026-08-23,6a8ca2c053616e6368000005
+ananya.rao@example.com,Coorg / Kodagu,Nisargadhama,2026-08-23,6a8ca2c053616e6368000006
+meghana.gowda@example.com,Mysuru & Srirangapatna,Mysore Palace,2026-09-05,6a9dc64053616e6368000007
+meghana.gowda@example.com,Mysuru & Srirangapatna,St. Philomena's Church,2026-09-05,6a9dc64053616e6368000008
+meghana.gowda@example.com,Mysuru & Srirangapatna,Chamundeshwari Temple,2026-09-05,6a9dc64053616e6368000009
+meghana.gowda@example.com,Mysuru & Srirangapatna,Mahishasura Statue,2026-09-05,6a9dc64053616e636800000a
+meghana.gowda@example.com,Mysuru & Srirangapatna,Brindavan Gardens,2026-09-05,6a9dc64053616e636800000b
+vikram.reddy@example.com,Hyderabad,Charminar,2026-09-12,6aa700c053616e636800000c
+vikram.reddy@example.com,Hyderabad,Mecca Masjid,2026-09-12,6aa700c053616e636800000d
+vikram.reddy@example.com,Hyderabad,Chowmahalla Palace,2026-09-12,6aa700c053616e636800000e
+vikram.reddy@example.com,Hyderabad,Salar Jung Museum,2026-09-12,6aa700c053616e636800000f
+vikram.reddy@example.com,Hyderabad,Golconda Fort,2026-09-13,6aa8524053616e6368000010
+vikram.reddy@example.com,Hyderabad,Qutb Shahi Tombs,2026-09-13,6aa8524053616e6368000011
+vikram.reddy@example.com,Hyderabad,Taramati Baradari,2026-09-13,6aa8524053616e6368000012
+vikram.reddy@example.com,Hyderabad,Birla Mandir Hyderabad,2026-09-13,6aa8524053616e6368000013
+priya.iyer@example.com,Madurai,Meenakshi Amman Temple,2026-08-29,6a948bc053616e6368000014
+priya.iyer@example.com,Madurai,Thirumalai Nayak Palace,2026-08-29,6a948bc053616e6368000015
+priya.iyer@example.com,Madurai,Gandhi Memorial Museum Madurai,2026-08-29,6a948bc053616e6368000016
+priya.iyer@example.com,Madurai,Vandiyur Mariamman Teppakulam,2026-08-29,6a948bc053616e6368000017
+arjun.nair@example.com,Kochi / Fort Kochi,St. Francis Church Fort Kochi,2026-09-19,6ab03b4053616e6368000018
+arjun.nair@example.com,Kochi / Fort Kochi,Santa Cruz Cathedral Basilica,2026-09-19,6ab03b4053616e6368000019
+arjun.nair@example.com,Kochi / Fort Kochi,Indo-Portuguese Museum,2026-09-19,6ab03b4053616e636800001a
+arjun.nair@example.com,Kochi / Fort Kochi,Chinese Fishing Nets,2026-09-19,6ab03b4053616e636800001b
+arjun.nair@example.com,Kochi / Fort Kochi,Marine Drive Kochi,2026-09-19,6ab03b4053616e636800001c
+arjun.nair@example.com,Kochi / Fort Kochi,Paradesi Synagogue,2026-09-20,6ab18cc053616e636800001d
+arjun.nair@example.com,Kochi / Fort Kochi,Mattancherry Dutch Palace,2026-09-20,6ab18cc053616e636800001e
+arjun.nair@example.com,Kochi / Fort Kochi,Bolgatty Palace,2026-09-20,6ab18cc053616e636800001f
+arjun.nair@example.com,Kochi / Fort Kochi,Mangalavanam Bird Sanctuary,2026-09-20,6ab18cc053616e6368000020
+nikhil.varma@example.com,Visakhapatnam,Ramakrishna Beach,2026-10-03,6ac2b04053616e6368000021
+nikhil.varma@example.com,Visakhapatnam,Visakha Museum,2026-10-03,6ac2b04053616e6368000022
+nikhil.varma@example.com,Visakhapatnam,INS Kursura Submarine Museum,2026-10-03,6ac2b04053616e6368000023
+nikhil.varma@example.com,Visakhapatnam,TU 142 Aircraft Museum,2026-10-03,6ac2b04053616e6368000024
+nikhil.varma@example.com,Visakhapatnam,Simhachalam Temple,2026-10-04,6ac401c053616e6368000025
+nikhil.varma@example.com,Visakhapatnam,Indira Gandhi Zoological Park,2026-10-04,6ac401c053616e6368000026
+nikhil.varma@example.com,Visakhapatnam,Rushikonda Beach,2026-10-04,6ac401c053616e6368000027
+lakshmi.krishnan@example.com,Kanchipuram,Kamakshi Amman Temple,2026-09-26,6ab975c053616e6368000028
+lakshmi.krishnan@example.com,Kanchipuram,Ekambareswarar Temple,2026-09-26,6ab975c053616e6368000029
+lakshmi.krishnan@example.com,Kanchipuram,Kailasanathar Temple,2026-09-26,6ab975c053616e636800002a
+lakshmi.krishnan@example.com,Kanchipuram,Varadharaja Perumal Temple,2026-09-26,6ab975c053616e636800002b
+deepa.hegde@example.com,Badami-Aihole-Pattadakal,Badami Cave Temples,2026-10-09,6aca994053616e636800002c
+deepa.hegde@example.com,Badami-Aihole-Pattadakal,Bhutanatha Temple,2026-10-09,6aca994053616e636800002d
+deepa.hegde@example.com,Badami-Aihole-Pattadakal,Agastya Lake,2026-10-09,6aca994053616e636800002e
+deepa.hegde@example.com,Badami-Aihole-Pattadakal,Banashankari Temple,2026-10-09,6aca994053616e636800002f
+deepa.hegde@example.com,Badami-Aihole-Pattadakal,Pattadakal Group of Monuments,2026-10-10,6acbeac053616e6368000030
+deepa.hegde@example.com,Badami-Aihole-Pattadakal,Durga Temple Aihole,2026-10-10,6acbeac053616e6368000031
+deepa.hegde@example.com,Badami-Aihole-Pattadakal,Badami Archaeological Museum,2026-10-10,6acbeac053616e6368000032
+deepa.hegde@example.com,Badami-Aihole-Pattadakal,Mahakuta Temples,2026-10-10,6acbeac053616e6368000033
+sneha.kulkarni@example.com,Bandipur-Nagarhole,Nagarhole National Park,2026-08-15,6a8216c053616e6368000034
+sneha.kulkarni@example.com,Bandipur-Nagarhole,Kabini Backwaters,2026-08-15,6a8216c053616e6368000035
+sneha.kulkarni@example.com,Bandipur-Nagarhole,Iruppu Falls,2026-08-16,6a83684053616e6368000036
+ananya.rao@example.com,Athirappilly,Athirappilly Falls,2025-11-11,69162ab053616e6368000037
+ananya.rao@example.com,Bandipur-Nagarhole,Iruppu Falls,2026-04-11,69dd3d3053616e6368000038
+ananya.rao@example.com,Coorg / Kodagu,Kote Betta,2026-07-16,6a5bcd3053616e6368000039
+ananya.rao@example.com,Munnar,Attukad Waterfalls,2026-04-10,69dbebb053616e636800003a
+arjun.nair@example.com,Vijayawada & Amaravati,Prakasam Barrage,2026-02-25,69a1e9b053616e636800003b
+arjun.nair@example.com,Puducherry,Promenade Beach,2026-09-30,6abfff3053616e636800003c
+arjun.nair@example.com,South Goa coast,Palolem Beach,2026-10-02,6ac2a23053616e636800003d
+arjun.nair@example.com,Wayanad,Banasura Sagar Dam,2026-07-24,6a66593053616e636800003e
+priya.iyer@example.com,Hampi,Lotus Mahal,2026-01-26,697a5cb053616e636800003f
+priya.iyer@example.com,Kanyakumari,Kumari Amman Temple,2026-09-21,6ab421b053616e6368000040
+priya.iyer@example.com,Madurai,Thiruparankundram Murugan Temple,2026-07-04,6a4bfb3053616e6368000041
+priya.iyer@example.com,Kanchipuram,Kailasanathar Temple,2026-04-16,69e3d4b053616e6368000042
+vikram.reddy@example.com,Warangal & Ramappa,Ramappa Temple,2026-07-02,6a49583053616e6368000043
+vikram.reddy@example.com,Lepakshi,Veerabhadra Temple Lepakshi,2026-03-30,69cd6b3053616e6368000044
+vikram.reddy@example.com,Mahabalipuram,Varaha Cave Temple,2026-05-08,6a00d5b053616e6368000045
+vikram.reddy@example.com,Vijayawada & Amaravati,Undavalli Caves,2025-12-26,69517e3053616e6368000046
+sneha.kulkarni@example.com,Mysuru & Srirangapatna,Ranganathittu Bird Sanctuary,2025-10-19,68f7d83053616e6368000047
+sneha.kulkarni@example.com,Warangal & Ramappa,Ramappa Lake,2026-07-05,6a4d4cb053616e6368000048
+sneha.kulkarni@example.com,Belur-Halebidu,Yagachi Dam,2026-02-07,698a2eb053616e6368000049
+sneha.kulkarni@example.com,Mysuru & Srirangapatna,Sri Chamarajendra Zoological Garden,2026-07-05,6a4d4cb053616e636800004a
+karthik.subramanian@example.com,Chikkamagaluru,Kemmangundi Z Point,2026-09-02,6a9b153053616e636800004b
+karthik.subramanian@example.com,South Goa coast,Cabo de Rama Fort,2026-06-09,6a2b05b053616e636800004c
+karthik.subramanian@example.com,Hampi,Matanga Hill,2025-12-20,6949953053616e636800004d
+karthik.subramanian@example.com,Mollem & Dudhsagar,Devil's Canyon,2026-06-26,6a416f3053616e636800004e
+divya.menon@example.com,Udupi-Malpe,Milagres Church,2026-07-09,6a5292b053616e636800004f
+divya.menon@example.com,Chennai,Chennai Rail Museum,2026-08-30,6a9720b053616e6368000050
+divya.menon@example.com,Gokarna,Gokarna Main Beach,2026-02-13,699217b053616e6368000051
+divya.menon@example.com,Puducherry,Paradise Beach Puducherry,2026-01-02,695ab8b053616e6368000052
+rohan.shetty@example.com,Gokarna,Yana Caves,2026-04-14,69e131b053616e6368000053
+rohan.shetty@example.com,Puducherry,Promenade Beach,2026-10-03,6ac3f3b053616e6368000054
+rohan.shetty@example.com,South Goa coast,Palolem Beach,2026-07-28,6a6b9f3053616e6368000055
+rohan.shetty@example.com,Alappuzha & Kumarakom,Marari Beach,2026-01-15,696bdc3053616e6368000056
+lakshmi.krishnan@example.com,Hampi,Lotus Mahal,2025-12-21,694ae6b053616e6368000057
+lakshmi.krishnan@example.com,Kanyakumari,Kumari Amman Temple,2026-08-04,6a74d9b053616e6368000058
+lakshmi.krishnan@example.com,Madurai,Thiruparankundram Murugan Temple,2026-02-06,6988dd3053616e6368000059
+lakshmi.krishnan@example.com,Srisailam,Mallikarjuna Jyotirlinga Temple,2026-09-30,6abfff3053616e636800005a
+aditya.joshi@example.com,Kodaikanal,Bear Shola Falls,2026-06-05,6a25bfb053616e636800005b
+aditya.joshi@example.com,Ooty & Coonoor,Doddabetta Peak,2026-08-21,6a8b433053616e636800005c
+aditya.joshi@example.com,Adilabad,Pochera Falls,2026-03-05,69ac75b053616e636800005d
+aditya.joshi@example.com,Munnar,Echo Point Munnar,2026-07-19,6a5fc1b053616e636800005e
+fathima.basheer@example.com,Vagamon,Kurisumala,2026-07-25,6a67aab053616e636800005f
+fathima.basheer@example.com,Panaji & Old Goa,Basilica of Bom Jesus,2026-06-14,6a319d3053616e6368000060
+fathima.basheer@example.com,Warangal & Ramappa,Ramappa Lake,2026-07-31,6a6f93b053616e6368000061
+fathima.basheer@example.com,Belur-Halebidu,Yagachi Dam,2026-02-23,699f46b053616e6368000062
+siddharth.rao@example.com,Bekal & Kannur,Arakkal Museum,2026-02-13,699217b053616e6368000063
+siddharth.rao@example.com,Thiruvananthapuram & Kovalam,Kuthiramalika Palace Museum,2026-03-04,69ab243053616e6368000064
+siddharth.rao@example.com,South Goa coast,Cabo de Rama Fort,2026-02-06,6988dd3053616e6368000065
+siddharth.rao@example.com,Mysuru & Srirangapatna,Mysore Palace,2026-04-05,69d5543053616e6368000066
+meghana.gowda@example.com,Madurai,Samanar Hills,2026-04-26,69f103b053616e6368000067
+meghana.gowda@example.com,Kanchipuram,Ulagalantha Perumal Temple,2026-04-21,69ea6c3053616e6368000068
+meghana.gowda@example.com,Gandikota,Madhavaraya Temple,2026-09-30,6abfff3053616e6368000069
+meghana.gowda@example.com,Badami-Aihole-Pattadakal,Banashankari Temple,2026-06-16,6a34403053616e636800006a
+nikhil.varma@example.com,Mahabalipuram,Mahishasuramardini Cave,2026-04-15,69e2833053616e636800006b
+nikhil.varma@example.com,Puducherry,Promenade Beach,2026-06-18,6a36e33053616e636800006c
+nikhil.varma@example.com,South Goa coast,Palolem Beach,2026-04-25,69efb23053616e636800006d
+nikhil.varma@example.com,Alappuzha & Kumarakom,Marari Beach,2026-06-02,6a21cb3053616e636800006e
+aishwarya.pillai@example.com,Mysuru & Srirangapatna,Rail Museum Mysuru,2026-09-09,6aa44fb053616e636800006f
+aishwarya.pillai@example.com,"Coimbatore, Pollachi & Valparai",Topslip Anamalai Tiger Reserve,2026-07-21,6a6264b053616e6368000070
+aishwarya.pillai@example.com,Ooty & Coonoor,Pykara Falls,2026-05-19,6a0f563053616e6368000071
+aishwarya.pillai@example.com,Udupi-Malpe,Hasta Shilpa Heritage Village,2026-05-01,69f79b3053616e6368000072
+harish.kumar@example.com,Belur-Halebidu,Jain Basadi Halebidu,2026-04-26,69f103b053616e6368000073
+harish.kumar@example.com,Bekal & Kannur,Muzhappilangad Drive-in Beach,2026-06-16,6a34403053616e6368000074
+harish.kumar@example.com,Thiruvananthapuram & Kovalam,Shankhumugham Beach,2026-09-25,6ab967b053616e6368000075
+harish.kumar@example.com,South Goa coast,Cola Beach,2026-06-25,6a401db053616e6368000076
+deepa.hegde@example.com,Mahabalipuram,Shore Temple,2026-06-22,6a3c293053616e6368000077
+deepa.hegde@example.com,Puducherry,Arikamedu,2026-08-06,6a777cb053616e6368000078
+deepa.hegde@example.com,Wayanad,Edakkal Caves,2026-09-08,6aa2fe3053616e6368000079
+deepa.hegde@example.com,Hampi,Vijaya Vitthala Temple,2026-08-07,6a78ce3053616e636800007a
+rahul.menon@example.com,Kochi / Fort Kochi,Chinese Fishing Nets,2026-08-13,6a80b73053616e636800007b
+rahul.menon@example.com,Visakhapatnam,Rushikonda Beach,2026-09-01,6a99c3b053616e636800007c
+rahul.menon@example.com,Kanyakumari,Maruthwamalai,2026-05-17,6a0cb33053616e636800007d
+rahul.menon@example.com,Gokarna,Paradise Beach Gokarna,2026-06-03,6a231cb053616e636800007e
+shruti.bhat@example.com,South Goa coast,Colva Beach,2026-09-26,6abab93053616e636800007f
+shruti.bhat@example.com,Kanchipuram,Ulagalantha Perumal Temple,2026-09-27,6abc0ab053616e6368000080
+shruti.bhat@example.com,Gokarna,Gokarna Main Beach,2026-08-09,6a7b713053616e6368000081
+shruti.bhat@example.com,Badami-Aihole-Pattadakal,Banashankari Temple,2026-07-24,6a66593053616e6368000082
+ganesh.iyer@example.com,Wayanad,Jain Temple Sultan Bathery,2026-07-22,6a63b63053616e6368000083
+ganesh.iyer@example.com,Adilabad,Jainath Temple,2026-07-08,6a51413053616e6368000084
+ganesh.iyer@example.com,Warangal & Ramappa,Thousand Pillar Temple,2026-10-07,6ac939b053616e6368000085
+ganesh.iyer@example.com,Thanjavur,Airavatesvara Temple Darasuram,2026-07-28,6a6b9f3053616e6368000086
+neha.agarwal@example.com,Mollem & Dudhsagar,Bhagwan Mahaveer National Park,2026-09-23,6ab6c4b053616e6368000087
+neha.agarwal@example.com,"Coimbatore, Pollachi & Valparai",Topslip Anamalai Tiger Reserve,2026-06-25,6a401db053616e6368000088
+neha.agarwal@example.com,Ooty & Coonoor,Sim's Park Coonoor,2026-08-17,6a85fd3053616e6368000089
+neha.agarwal@example.com,Coorg / Kodagu,Nisargadhama,2026-09-29,6abeadb053616e636800008a
+manoj.pillai@example.com,Kodaikanal,Bear Shola Falls,2026-09-03,6a9c66b053616e636800008b
+manoj.pillai@example.com,Adilabad,Pochera Falls,2026-10-09,6acbdcb053616e636800008c
+manoj.pillai@example.com,Chikkamagaluru,Hebbe Falls,2026-09-29,6abeadb053616e636800008d
+manoj.pillai@example.com,Kodaikanal,Bryant Park,2026-09-07,6aa1acb053616e636800008e
+sana.khan@example.com,Gandikota,Jamia Masjid Gandikota,2026-07-05,6a4d4cb053616e636800008f
+sana.khan@example.com,Vagamon,Kurisumala,2026-07-29,6a6cf0b053616e6368000090
+sana.khan@example.com,Panaji & Old Goa,Basilica of Bom Jesus,2026-10-09,6acbdcb053616e6368000091
+sana.khan@example.com,Kochi / Fort Kochi,Marine Drive Kochi,2026-08-17,6a85fd3053616e6368000092
+varun.krishna@example.com,Rameswaram & Dhanushkodi,Dhanushkodi,2026-09-11,6aa6f2b053616e6368000093
+varun.krishna@example.com,Warangal & Ramappa,Warangal Fort,2026-07-26,6a68fc3053616e6368000094
+varun.krishna@example.com,Kochi / Fort Kochi,Chinese Fishing Nets,2026-09-17,6aaedbb053616e6368000095
+varun.krishna@example.com,Belur-Halebidu,Kedareshwara Temple Halebidu,2026-08-13,6a80b73053616e6368000096
+pooja.shenoy@example.com,South Goa coast,Colva Beach,2026-10-04,6ac5453053616e6368000097
+pooja.shenoy@example.com,Gokarna,Gokarna Main Beach,2026-08-09,6a7b713053616e6368000098
+pooja.shenoy@example.com,Puducherry,Paradise Beach Puducherry,2026-10-06,6ac7e83053616e6368000099
+pooja.shenoy@example.com,South Goa coast,Menezes Braganza House Chandor,2026-08-08,6a7a1fb053616e636800009a

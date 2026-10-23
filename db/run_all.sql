@@ -43,6 +43,7 @@
 \ir 07a_seed_users.sql
 \ir 07b_seed_trips.sql
 \ir 07d_seed_reviews.sql
+\ir 07e_seed_review_links.sql
 
 -- ---------------- engine and triggers (Step 3) ----------------
 \ir 08a_feasibility_engine.sql
