@@ -1,0 +1,155 @@
+review_id,place_id,place,place_type,requires_daylight,fee_indian,typical_visit_minutes,destination,state,user_id,email,display_name,rating,visited_on,actual_duration_min,crowd_level,created_at,trip_id,trip_title,party_size,mode_name
+1,1,Abbey Falls,waterfall,t,15.00,60,Coorg / Kodagu,Karnataka,4,ananya.rao@example.com,Ananya Rao,5.0,2026-08-22,50,5,2026-08-23 20:00:00+00,1,Coorg coffee weekend,2,car
+2,2,Raja's Seat,viewpoint,t,10.00,45,Coorg / Kodagu,Karnataka,4,ananya.rao@example.com,Ananya Rao,4.0,2026-08-22,40,4,2026-08-23 20:00:00+00,1,Coorg coffee weekend,2,car
+3,3,Madikeri Fort,fort,t,0.00,60,Coorg / Kodagu,Karnataka,4,ananya.rao@example.com,Ananya Rao,4.0,2026-08-22,60,3,2026-08-23 20:00:00+00,1,Coorg coffee weekend,2,car
+4,4,Madikeri Museum,museum,f,0.00,45,Coorg / Kodagu,Karnataka,4,ananya.rao@example.com,Ananya Rao,2.0,2026-08-22,50,2,2026-08-23 20:00:00+00,1,Coorg coffee weekend,2,car
+5,6,Dubare Elephant Camp,wildlife,t,0.00,150,Coorg / Kodagu,Karnataka,4,ananya.rao@example.com,Ananya Rao,4.0,2026-08-23,140,5,2026-08-24 20:00:00+00,1,Coorg coffee weekend,2,car
+6,10,Nisargadhama,trail,t,30.00,90,Coorg / Kodagu,Karnataka,4,ananya.rao@example.com,Ananya Rao,3.0,2026-08-23,100,1,2026-08-24 20:00:00+00,1,Coorg coffee weekend,2,car
+7,31,Mysore Palace,heritage,t,120.00,120,Mysuru & Srirangapatna,Karnataka,16,meghana.gowda@example.com,Meghana Gowda,4.0,2026-09-05,120,2,2026-09-06 20:00:00+00,2,Mysuru heritage day,2,car
+8,34,St. Philomena's Church,heritage,f,0.00,30,Mysuru & Srirangapatna,Karnataka,16,meghana.gowda@example.com,Meghana Gowda,4.0,2026-09-05,20,5,2026-09-06 20:00:00+00,2,Mysuru heritage day,2,car
+9,32,Chamundeshwari Temple,temple,f,0.00,60,Mysuru & Srirangapatna,Karnataka,16,meghana.gowda@example.com,Meghana Gowda,3.0,2026-09-05,65,3,2026-09-06 20:00:00+00,2,Mysuru heritage day,2,car
+10,33,Mahishasura Statue,viewpoint,t,0.00,20,Mysuru & Srirangapatna,Karnataka,16,meghana.gowda@example.com,Meghana Gowda,5.0,2026-09-05,40,4,2026-09-06 20:00:00+00,2,Mysuru heritage day,2,car
+11,37,Brindavan Gardens,garden,t,50.00,120,Mysuru & Srirangapatna,Karnataka,16,meghana.gowda@example.com,Meghana Gowda,5.0,2026-09-05,125,3,2026-09-06 20:00:00+00,2,Mysuru heritage day,2,car
+12,299,Charminar,heritage,t,25.00,60,Hyderabad,Telangana,7,vikram.reddy@example.com,Vikram Reddy,4.0,2026-09-12,55,4,2026-09-13 20:00:00+00,3,Hyderabad in two days,1,car
+13,303,Mecca Masjid,heritage,f,0.00,30,Hyderabad,Telangana,7,vikram.reddy@example.com,Vikram Reddy,3.0,2026-09-12,20,2,2026-09-13 20:00:00+00,3,Hyderabad in two days,1,car
+14,301,Chowmahalla Palace,heritage,f,80.00,90,Hyderabad,Telangana,7,vikram.reddy@example.com,Vikram Reddy,5.0,2026-09-12,95,3,2026-09-13 20:00:00+00,3,Hyderabad in two days,1,car
+15,302,Salar Jung Museum,museum,f,20.00,150,Hyderabad,Telangana,7,vikram.reddy@example.com,Vikram Reddy,4.0,2026-09-12,160,5,2026-09-13 20:00:00+00,3,Hyderabad in two days,1,car
+16,300,Golconda Fort,fort,t,25.00,150,Hyderabad,Telangana,7,vikram.reddy@example.com,Vikram Reddy,3.0,2026-09-13,150,1,2026-09-14 20:00:00+00,3,Hyderabad in two days,1,car
+17,306,Qutb Shahi Tombs,heritage,t,50.00,90,Hyderabad,Telangana,7,vikram.reddy@example.com,Vikram Reddy,4.0,2026-09-13,95,3,2026-09-14 20:00:00+00,3,Hyderabad in two days,1,car
+18,308,Taramati Baradari,heritage,t,0.00,45,Hyderabad,Telangana,7,vikram.reddy@example.com,Vikram Reddy,5.0,2026-09-13,35,2,2026-09-14 20:00:00+00,3,Hyderabad in two days,1,car
+19,305,Birla Mandir Hyderabad,temple,f,0.00,45,Hyderabad,Telangana,7,vikram.reddy@example.com,Vikram Reddy,4.0,2026-09-13,45,1,2026-09-14 20:00:00+00,3,Hyderabad in two days,1,car
+20,199,Meenakshi Amman Temple,temple,f,0.00,150,Madurai,Tamil Nadu,6,priya.iyer@example.com,Priya Iyer,3.0,2026-08-29,140,5,2026-08-30 20:00:00+00,4,Temples of Madurai,2,car
+21,200,Thirumalai Nayak Palace,heritage,f,10.00,60,Madurai,Tamil Nadu,6,priya.iyer@example.com,Priya Iyer,5.0,2026-08-29,55,1,2026-08-30 20:00:00+00,4,Temples of Madurai,2,car
+22,201,Gandhi Memorial Museum Madurai,museum,f,0.00,60,Madurai,Tamil Nadu,6,priya.iyer@example.com,Priya Iyer,4.0,2026-08-29,60,2,2026-08-30 20:00:00+00,4,Temples of Madurai,2,car
+23,206,Vandiyur Mariamman Teppakulam,lake,t,0.00,30,Madurai,Tamil Nadu,6,priya.iyer@example.com,Priya Iyer,2.0,2026-08-29,30,2,2026-08-30 20:00:00+00,4,Temples of Madurai,2,car
+24,94,St. Francis Church Fort Kochi,heritage,f,0.00,30,Kochi / Fort Kochi,Kerala,5,arjun.nair@example.com,Arjun Nair,4.0,2026-09-19,40,1,2026-09-20 20:00:00+00,5,Fort Kochi walk,2,car
+25,95,Santa Cruz Cathedral Basilica,heritage,f,0.00,30,Kochi / Fort Kochi,Kerala,5,arjun.nair@example.com,Arjun Nair,2.0,2026-09-19,20,1,2026-09-20 20:00:00+00,5,Fort Kochi walk,2,car
+26,99,Indo-Portuguese Museum,museum,f,10.00,45,Kochi / Fort Kochi,Kerala,5,arjun.nair@example.com,Arjun Nair,5.0,2026-09-19,55,1,2026-09-20 20:00:00+00,5,Fort Kochi walk,2,car
+27,96,Chinese Fishing Nets,beach,t,0.00,45,Kochi / Fort Kochi,Kerala,5,arjun.nair@example.com,Arjun Nair,5.0,2026-09-19,40,1,2026-09-20 20:00:00+00,5,Fort Kochi walk,2,car
+28,100,Marine Drive Kochi,viewpoint,t,0.00,60,Kochi / Fort Kochi,Kerala,5,arjun.nair@example.com,Arjun Nair,4.0,2026-09-19,50,1,2026-09-20 20:00:00+00,5,Fort Kochi walk,2,car
+29,98,Paradesi Synagogue,heritage,f,5.00,30,Kochi / Fort Kochi,Kerala,5,arjun.nair@example.com,Arjun Nair,3.0,2026-09-20,35,1,2026-09-21 20:00:00+00,5,Fort Kochi walk,2,car
+30,97,Mattancherry Dutch Palace,museum,f,5.00,60,Kochi / Fort Kochi,Kerala,5,arjun.nair@example.com,Arjun Nair,4.0,2026-09-20,60,1,2026-09-21 20:00:00+00,5,Fort Kochi walk,2,car
+31,101,Bolgatty Palace,heritage,t,0.00,45,Kochi / Fort Kochi,Kerala,5,arjun.nair@example.com,Arjun Nair,3.0,2026-09-20,40,1,2026-09-21 20:00:00+00,5,Fort Kochi walk,2,car
+32,103,Mangalavanam Bird Sanctuary,wildlife,t,0.00,45,Kochi / Fort Kochi,Kerala,5,arjun.nair@example.com,Arjun Nair,4.0,2026-09-20,50,1,2026-09-21 20:00:00+00,5,Fort Kochi walk,2,car
+33,254,Ramakrishna Beach,beach,t,0.00,60,Visakhapatnam,Andhra Pradesh,17,nikhil.varma@example.com,Nikhil Varma,5.0,2026-10-03,55,4,2026-10-04 20:00:00+00,6,Vizag coast weekend,3,car
+34,262,Visakha Museum,museum,f,10.00,45,Visakhapatnam,Andhra Pradesh,17,nikhil.varma@example.com,Nikhil Varma,4.0,2026-10-03,55,5,2026-10-04 20:00:00+00,6,Vizag coast weekend,3,car
+35,255,INS Kursura Submarine Museum,museum,f,40.00,45,Visakhapatnam,Andhra Pradesh,17,nikhil.varma@example.com,Nikhil Varma,4.0,2026-10-03,45,1,2026-10-04 20:00:00+00,6,Vizag coast weekend,3,car
+36,256,TU 142 Aircraft Museum,museum,f,70.00,45,Visakhapatnam,Andhra Pradesh,17,nikhil.varma@example.com,Nikhil Varma,4.0,2026-10-03,50,3,2026-10-04 20:00:00+00,6,Vizag coast weekend,3,car
+37,258,Simhachalam Temple,temple,f,0.00,90,Visakhapatnam,Andhra Pradesh,17,nikhil.varma@example.com,Nikhil Varma,5.0,2026-10-04,80,2,2026-10-05 20:00:00+00,6,Vizag coast weekend,3,car
+38,260,Indira Gandhi Zoological Park,wildlife,t,50.00,150,Visakhapatnam,Andhra Pradesh,17,nikhil.varma@example.com,Nikhil Varma,3.0,2026-10-04,150,1,2026-10-05 20:00:00+00,6,Vizag coast weekend,3,car
+39,259,Rushikonda Beach,beach,t,0.00,90,Visakhapatnam,Andhra Pradesh,17,nikhil.varma@example.com,Nikhil Varma,4.0,2026-10-04,85,4,2026-10-05 20:00:00+00,6,Vizag coast weekend,3,car
+40,186,Kamakshi Amman Temple,temple,f,0.00,45,Kanchipuram,Tamil Nadu,12,lakshmi.krishnan@example.com,Lakshmi Krishnan,5.0,2026-09-26,50,3,2026-09-27 20:00:00+00,7,Kanchipuram temple day,2,bus
+41,187,Ekambareswarar Temple,temple,f,0.00,60,Kanchipuram,Tamil Nadu,12,lakshmi.krishnan@example.com,Lakshmi Krishnan,4.0,2026-09-26,70,5,2026-09-27 20:00:00+00,7,Kanchipuram temple day,2,bus
+42,189,Kailasanathar Temple,heritage,t,0.00,45,Kanchipuram,Tamil Nadu,12,lakshmi.krishnan@example.com,Lakshmi Krishnan,5.0,2026-09-26,40,4,2026-09-27 20:00:00+00,7,Kanchipuram temple day,2,bus
+43,188,Varadharaja Perumal Temple,temple,f,0.00,60,Kanchipuram,Tamil Nadu,12,lakshmi.krishnan@example.com,Lakshmi Krishnan,3.0,2026-09-26,50,2,2026-09-27 20:00:00+00,7,Kanchipuram temple day,2,bus
+44,47,Badami Cave Temples,heritage,t,25.00,90,Badami-Aihole-Pattadakal,Karnataka,20,deepa.hegde@example.com,Deepa Hegde,5.0,2026-10-09,90,1,2026-10-10 20:00:00+00,8,Chalukya trail,2,bus
+45,48,Bhutanatha Temple,heritage,t,0.00,40,Badami-Aihole-Pattadakal,Karnataka,20,deepa.hegde@example.com,Deepa Hegde,4.0,2026-10-09,50,1,2026-10-10 20:00:00+00,8,Chalukya trail,2,bus
+46,49,Agastya Lake,lake,t,0.00,40,Badami-Aihole-Pattadakal,Karnataka,20,deepa.hegde@example.com,Deepa Hegde,4.0,2026-10-09,55,1,2026-10-10 20:00:00+00,8,Chalukya trail,2,bus
+47,50,Banashankari Temple,temple,f,0.00,45,Badami-Aihole-Pattadakal,Karnataka,20,deepa.hegde@example.com,Deepa Hegde,2.0,2026-10-09,35,1,2026-10-10 20:00:00+00,8,Chalukya trail,2,bus
+48,51,Pattadakal Group of Monuments,heritage,t,40.00,120,Badami-Aihole-Pattadakal,Karnataka,20,deepa.hegde@example.com,Deepa Hegde,5.0,2026-10-10,115,1,2026-10-11 20:00:00+00,8,Chalukya trail,2,bus
+49,52,Durga Temple Aihole,heritage,t,25.00,90,Badami-Aihole-Pattadakal,Karnataka,20,deepa.hegde@example.com,Deepa Hegde,4.0,2026-10-10,90,1,2026-10-11 20:00:00+00,8,Chalukya trail,2,bus
+50,54,Badami Archaeological Museum,museum,f,5.00,45,Badami-Aihole-Pattadakal,Karnataka,20,deepa.hegde@example.com,Deepa Hegde,5.0,2026-10-10,55,1,2026-10-11 20:00:00+00,8,Chalukya trail,2,bus
+51,53,Mahakuta Temples,temple,f,0.00,45,Badami-Aihole-Pattadakal,Karnataka,20,deepa.hegde@example.com,Deepa Hegde,3.0,2026-10-10,50,1,2026-10-11 20:00:00+00,8,Chalukya trail,2,bus
+52,83,Nagarhole National Park,wildlife,t,800.00,180,Bandipur-Nagarhole,Karnataka,8,sneha.kulkarni@example.com,Sneha Kulkarni,4.0,2026-08-15,175,5,2026-08-16 20:00:00+00,9,Kabini and Nagarhole,2,car
+53,84,Kabini Backwaters,lake,t,0.00,120,Bandipur-Nagarhole,Karnataka,8,sneha.kulkarni@example.com,Sneha Kulkarni,3.0,2026-08-15,120,3,2026-08-16 20:00:00+00,9,Kabini and Nagarhole,2,car
+54,86,Iruppu Falls,waterfall,t,50.00,60,Bandipur-Nagarhole,Karnataka,8,sneha.kulkarni@example.com,Sneha Kulkarni,4.0,2026-08-16,70,4,2026-08-17 20:00:00+00,9,Kabini and Nagarhole,2,car
+55,151,Athirappilly Falls,waterfall,t,50.00,90,Athirappilly,Kerala,4,ananya.rao@example.com,Ananya Rao,5.0,2025-11-11,80,5,2025-11-13 19:00:00+00,,,,
+56,86,Iruppu Falls,waterfall,t,50.00,60,Bandipur-Nagarhole,Karnataka,4,ananya.rao@example.com,Ananya Rao,4.0,2026-04-11,50,5,2026-04-13 19:00:00+00,,,,
+57,8,Kote Betta,trail,t,0.00,240,Coorg / Kodagu,Karnataka,4,ananya.rao@example.com,Ananya Rao,5.0,2026-07-16,240,3,2026-07-18 19:00:00+00,,,,
+58,109,Attukad Waterfalls,waterfall,t,0.00,45,Munnar,Kerala,4,ananya.rao@example.com,Ananya Rao,4.0,2026-04-10,50,2,2026-04-12 19:00:00+00,,,,
+59,284,Prakasam Barrage,viewpoint,t,0.00,30,Vijayawada & Amaravati,Andhra Pradesh,5,arjun.nair@example.com,Arjun Nair,4.0,2026-02-25,40,1,2026-02-27 19:00:00+00,,,,
+60,245,Promenade Beach,beach,t,0.00,60,Puducherry,Puducherry,5,arjun.nair@example.com,Arjun Nair,2.0,2026-09-30,50,1,2026-10-02 19:00:00+00,,,,
+61,346,Palolem Beach,beach,t,0.00,150,South Goa coast,Goa,5,arjun.nair@example.com,Arjun Nair,5.0,2026-10-02,145,1,2026-10-04 19:00:00+00,,,,
+62,131,Banasura Sagar Dam,lake,t,40.00,90,Wayanad,Kerala,5,arjun.nair@example.com,Arjun Nair,3.0,2026-07-24,85,1,2026-07-26 19:00:00+00,,,,
+63,13,Lotus Mahal,heritage,t,0.00,45,Hampi,Karnataka,6,priya.iyer@example.com,Priya Iyer,5.0,2026-01-26,55,4,2026-01-28 19:00:00+00,,,,
+64,215,Kumari Amman Temple,temple,f,0.00,45,Kanyakumari,Tamil Nadu,6,priya.iyer@example.com,Priya Iyer,4.0,2026-09-21,40,1,2026-09-23 19:00:00+00,,,,
+65,202,Thiruparankundram Murugan Temple,temple,f,0.00,60,Madurai,Tamil Nadu,6,priya.iyer@example.com,Priya Iyer,3.0,2026-07-04,65,3,2026-07-06 19:00:00+00,,,,
+66,189,Kailasanathar Temple,heritage,t,0.00,45,Kanchipuram,Tamil Nadu,6,priya.iyer@example.com,Priya Iyer,3.0,2026-04-16,35,5,2026-04-18 19:00:00+00,,,,
+67,309,Ramappa Temple,heritage,t,0.00,90,Warangal & Ramappa,Telangana,7,vikram.reddy@example.com,Vikram Reddy,4.0,2026-07-02,85,4,2026-07-04 19:00:00+00,,,,
+68,296,Veerabhadra Temple Lepakshi,heritage,t,0.00,90,Lepakshi,Andhra Pradesh,7,vikram.reddy@example.com,Vikram Reddy,4.0,2026-03-30,95,3,2026-04-01 19:00:00+00,,,,
+69,182,Varaha Cave Temple,heritage,t,0.00,20,Mahabalipuram,Tamil Nadu,7,vikram.reddy@example.com,Vikram Reddy,4.0,2026-05-08,30,5,2026-05-10 19:00:00+00,,,,
+70,283,Undavalli Caves,heritage,t,25.00,60,Vijayawada & Amaravati,Andhra Pradesh,7,vikram.reddy@example.com,Vikram Reddy,3.0,2025-12-26,50,2,2025-12-28 19:00:00+00,,,,
+71,38,Ranganathittu Bird Sanctuary,wildlife,t,100.00,90,Mysuru & Srirangapatna,Karnataka,8,sneha.kulkarni@example.com,Sneha Kulkarni,2.0,2025-10-19,85,5,2025-10-21 19:00:00+00,,,,
+72,315,Ramappa Lake,lake,t,0.00,45,Warangal & Ramappa,Telangana,8,sneha.kulkarni@example.com,Sneha Kulkarni,5.0,2026-07-05,50,1,2026-07-07 19:00:00+00,,,,
+73,61,Yagachi Dam,lake,t,0.00,60,Belur-Halebidu,Karnataka,8,sneha.kulkarni@example.com,Sneha Kulkarni,3.0,2026-02-07,70,4,2026-02-09 19:00:00+00,,,,
+74,35,Sri Chamarajendra Zoological Garden,wildlife,t,120.00,150,Mysuru & Srirangapatna,Karnataka,8,sneha.kulkarni@example.com,Sneha Kulkarni,5.0,2026-07-05,155,1,2026-07-07 19:00:00+00,,,,
+75,44,Kemmangundi Z Point,viewpoint,t,0.00,90,Chikkamagaluru,Karnataka,9,karthik.subramanian@example.com,Karthik Subramanian,4.0,2026-09-02,95,2,2026-09-04 19:00:00+00,,,,
+76,347,Cabo de Rama Fort,fort,t,0.00,60,South Goa coast,Goa,9,karthik.subramanian@example.com,Karthik Subramanian,4.0,2026-06-09,55,4,2026-06-11 19:00:00+00,,,,
+77,18,Matanga Hill,viewpoint,t,0.00,150,Hampi,Karnataka,9,karthik.subramanian@example.com,Karthik Subramanian,4.0,2025-12-20,150,3,2025-12-22 19:00:00+00,,,,
+78,357,Devil's Canyon,viewpoint,t,0.00,45,Mollem & Dudhsagar,Goa,9,karthik.subramanian@example.com,Karthik Subramanian,4.0,2026-06-26,40,4,2026-06-28 19:00:00+00,,,,
+79,76,Milagres Church,heritage,f,0.00,30,Udupi-Malpe,Karnataka,10,divya.menon@example.com,Divya Menon,3.0,2026-07-09,25,1,2026-07-11 19:00:00+00,,,,
+80,177,Chennai Rail Museum,museum,f,50.00,60,Chennai,Tamil Nadu,10,divya.menon@example.com,Divya Menon,5.0,2026-08-30,60,1,2026-09-01 19:00:00+00,,,,
+81,63,Gokarna Main Beach,beach,t,0.00,60,Gokarna,Karnataka,10,divya.menon@example.com,Divya Menon,3.0,2026-02-13,65,1,2026-02-15 19:00:00+00,,,,
+82,252,Paradise Beach Puducherry,beach,t,250.00,150,Puducherry,Puducherry,10,divya.menon@example.com,Divya Menon,4.0,2026-01-02,150,1,2026-01-04 19:00:00+00,,,,
+83,69,Yana Caves,trail,t,0.00,150,Gokarna,Karnataka,11,rohan.shetty@example.com,Rohan Shetty,4.0,2026-04-14,140,5,2026-04-16 19:00:00+00,,,,
+84,245,Promenade Beach,beach,t,0.00,60,Puducherry,Puducherry,11,rohan.shetty@example.com,Rohan Shetty,5.0,2026-10-03,55,1,2026-10-05 19:00:00+00,,,,
+85,346,Palolem Beach,beach,t,0.00,150,South Goa coast,Goa,11,rohan.shetty@example.com,Rohan Shetty,4.0,2026-07-28,150,2,2026-07-30 19:00:00+00,,,,
+86,118,Marari Beach,beach,t,0.00,90,Alappuzha & Kumarakom,Kerala,11,rohan.shetty@example.com,Rohan Shetty,5.0,2026-01-15,100,4,2026-01-17 19:00:00+00,,,,
+87,13,Lotus Mahal,heritage,t,0.00,45,Hampi,Karnataka,12,lakshmi.krishnan@example.com,Lakshmi Krishnan,5.0,2025-12-21,35,2,2025-12-23 19:00:00+00,,,,
+88,215,Kumari Amman Temple,temple,f,0.00,45,Kanyakumari,Tamil Nadu,12,lakshmi.krishnan@example.com,Lakshmi Krishnan,3.0,2026-08-04,45,1,2026-08-06 19:00:00+00,,,,
+89,202,Thiruparankundram Murugan Temple,temple,f,0.00,60,Madurai,Tamil Nadu,12,lakshmi.krishnan@example.com,Lakshmi Krishnan,2.0,2026-02-06,70,5,2026-02-08 19:00:00+00,,,,
+90,290,Mallikarjuna Jyotirlinga Temple,temple,f,0.00,150,Srisailam,Andhra Pradesh,12,lakshmi.krishnan@example.com,Lakshmi Krishnan,4.0,2026-09-30,150,1,2026-10-02 19:00:00+00,,,,
+91,234,Bear Shola Falls,waterfall,t,0.00,45,Kodaikanal,Tamil Nadu,13,aditya.joshi@example.com,Aditya Joshi,5.0,2026-06-05,45,3,2026-06-07 19:00:00+00,,,,
+92,221,Doddabetta Peak,viewpoint,t,10.00,60,Ooty & Coonoor,Tamil Nadu,13,aditya.joshi@example.com,Aditya Joshi,4.0,2026-08-21,70,4,2026-08-23 19:00:00+00,,,,
+93,322,Pochera Falls,waterfall,t,0.00,60,Adilabad,Telangana,13,aditya.joshi@example.com,Aditya Joshi,4.0,2026-03-05,50,2,2026-03-07 19:00:00+00,,,,
+94,107,Echo Point Munnar,viewpoint,t,10.00,30,Munnar,Kerala,13,aditya.joshi@example.com,Aditya Joshi,5.0,2026-07-19,20,2,2026-07-21 19:00:00+00,,,,
+95,165,Kurisumala,trail,t,0.00,120,Vagamon,Kerala,14,fathima.basheer@example.com,Fathima Basheer,5.0,2026-07-25,130,1,2026-07-27 19:00:00+00,,,,
+96,328,Basilica of Bom Jesus,heritage,f,0.00,45,Panaji & Old Goa,Goa,14,fathima.basheer@example.com,Fathima Basheer,5.0,2026-06-14,45,3,2026-06-16 19:00:00+00,,,,
+97,315,Ramappa Lake,lake,t,0.00,45,Warangal & Ramappa,Telangana,14,fathima.basheer@example.com,Fathima Basheer,5.0,2026-07-31,55,1,2026-08-02 19:00:00+00,,,,
+98,61,Yagachi Dam,lake,t,0.00,60,Belur-Halebidu,Karnataka,14,fathima.basheer@example.com,Fathima Basheer,5.0,2026-02-23,50,5,2026-02-25 19:00:00+00,,,,
+99,158,Arakkal Museum,museum,f,10.00,45,Bekal & Kannur,Kerala,15,siddharth.rao@example.com,Siddharth Rao,3.0,2026-02-13,50,1,2026-02-15 19:00:00+00,,,,
+100,145,Kuthiramalika Palace Museum,museum,f,50.00,45,Thiruvananthapuram & Kovalam,Kerala,15,siddharth.rao@example.com,Siddharth Rao,2.0,2026-03-04,35,1,2026-03-06 19:00:00+00,,,,
+101,347,Cabo de Rama Fort,fort,t,0.00,60,South Goa coast,Goa,15,siddharth.rao@example.com,Siddharth Rao,4.0,2026-02-06,60,1,2026-02-08 19:00:00+00,,,,
+102,31,Mysore Palace,heritage,t,120.00,120,Mysuru & Srirangapatna,Karnataka,15,siddharth.rao@example.com,Siddharth Rao,3.0,2026-04-05,115,1,2026-04-07 19:00:00+00,,,,
+103,203,Samanar Hills,heritage,t,0.00,90,Madurai,Tamil Nadu,16,meghana.gowda@example.com,Meghana Gowda,5.0,2026-04-26,100,4,2026-04-28 19:00:00+00,,,,
+104,190,Ulagalantha Perumal Temple,temple,f,0.00,30,Kanchipuram,Tamil Nadu,16,meghana.gowda@example.com,Meghana Gowda,5.0,2026-04-21,25,1,2026-04-23 19:00:00+00,,,,
+105,278,Madhavaraya Temple,heritage,t,0.00,30,Gandikota,Andhra Pradesh,16,meghana.gowda@example.com,Meghana Gowda,4.0,2026-09-30,40,4,2026-10-02 19:00:00+00,,,,
+106,50,Banashankari Temple,temple,f,0.00,45,Badami-Aihole-Pattadakal,Karnataka,16,meghana.gowda@example.com,Meghana Gowda,5.0,2026-06-16,40,1,2026-06-18 19:00:00+00,,,,
+107,183,Mahishasuramardini Cave,heritage,t,0.00,20,Mahabalipuram,Tamil Nadu,17,nikhil.varma@example.com,Nikhil Varma,3.0,2026-04-15,10,2,2026-04-17 19:00:00+00,,,,
+108,245,Promenade Beach,beach,t,0.00,60,Puducherry,Puducherry,17,nikhil.varma@example.com,Nikhil Varma,4.0,2026-06-18,60,1,2026-06-20 19:00:00+00,,,,
+109,346,Palolem Beach,beach,t,0.00,150,South Goa coast,Goa,17,nikhil.varma@example.com,Nikhil Varma,4.0,2026-04-25,155,3,2026-04-27 19:00:00+00,,,,
+110,118,Marari Beach,beach,t,0.00,90,Alappuzha & Kumarakom,Kerala,17,nikhil.varma@example.com,Nikhil Varma,5.0,2026-06-02,80,2,2026-06-04 19:00:00+00,,,,
+111,39,Rail Museum Mysuru,museum,f,15.00,45,Mysuru & Srirangapatna,Karnataka,18,aishwarya.pillai@example.com,Aishwarya Pillai,5.0,2026-09-09,45,3,2026-09-11 19:00:00+00,,,,
+112,241,Topslip Anamalai Tiger Reserve,wildlife,t,500.00,180,"Coimbatore, Pollachi & Valparai",Tamil Nadu,18,aishwarya.pillai@example.com,Aishwarya Pillai,3.0,2026-07-21,190,4,2026-07-23 19:00:00+00,,,,
+113,228,Pykara Falls,waterfall,t,15.00,60,Ooty & Coonoor,Tamil Nadu,18,aishwarya.pillai@example.com,Aishwarya Pillai,2.0,2026-05-19,55,5,2026-05-21 19:00:00+00,,,,
+114,75,Hasta Shilpa Heritage Village,museum,f,300.00,120,Udupi-Malpe,Karnataka,18,aishwarya.pillai@example.com,Aishwarya Pillai,5.0,2026-05-01,125,1,2026-05-03 19:00:00+00,,,,
+115,58,Jain Basadi Halebidu,heritage,t,0.00,30,Belur-Halebidu,Karnataka,19,harish.kumar@example.com,Harish Kumar,4.0,2026-04-26,30,3,2026-04-28 19:00:00+00,,,,
+116,159,Muzhappilangad Drive-in Beach,beach,t,0.00,90,Bekal & Kannur,Kerala,19,harish.kumar@example.com,Harish Kumar,2.0,2026-06-16,95,2,2026-06-18 19:00:00+00,,,,
+117,146,Shankhumugham Beach,beach,t,0.00,60,Thiruvananthapuram & Kovalam,Kerala,19,harish.kumar@example.com,Harish Kumar,5.0,2026-09-25,50,5,2026-09-27 19:00:00+00,,,,
+118,348,Cola Beach,beach,t,0.00,120,South Goa coast,Goa,19,harish.kumar@example.com,Harish Kumar,4.0,2026-06-25,120,3,2026-06-27 19:00:00+00,,,,
+119,178,Shore Temple,heritage,t,40.00,60,Mahabalipuram,Tamil Nadu,20,deepa.hegde@example.com,Deepa Hegde,4.0,2026-06-22,65,1,2026-06-24 19:00:00+00,,,,
+120,253,Arikamedu,heritage,t,0.00,30,Puducherry,Puducherry,20,deepa.hegde@example.com,Deepa Hegde,3.0,2026-08-06,35,1,2026-08-08 19:00:00+00,,,,
+121,126,Edakkal Caves,heritage,t,50.00,120,Wayanad,Kerala,20,deepa.hegde@example.com,Deepa Hegde,3.0,2026-09-08,115,1,2026-09-10 19:00:00+00,,,,
+122,12,Vijaya Vitthala Temple,heritage,t,40.00,120,Hampi,Karnataka,20,deepa.hegde@example.com,Deepa Hegde,4.0,2026-08-07,120,1,2026-08-09 19:00:00+00,,,,
+123,96,Chinese Fishing Nets,beach,t,0.00,45,Kochi / Fort Kochi,Kerala,21,rahul.menon@example.com,Rahul Menon,4.0,2026-08-13,45,2,2026-08-15 19:00:00+00,,,,
+124,259,Rushikonda Beach,beach,t,0.00,90,Visakhapatnam,Andhra Pradesh,21,rahul.menon@example.com,Rahul Menon,4.0,2026-09-01,80,5,2026-09-03 19:00:00+00,,,,
+125,220,Maruthwamalai,trail,t,0.00,120,Kanyakumari,Tamil Nadu,21,rahul.menon@example.com,Rahul Menon,4.0,2026-05-17,115,1,2026-05-19 19:00:00+00,,,,
+126,67,Paradise Beach Gokarna,beach,t,0.00,90,Gokarna,Karnataka,21,rahul.menon@example.com,Rahul Menon,3.0,2026-06-03,95,3,2026-06-05 19:00:00+00,,,,
+127,102,Colva Beach,beach,t,0.00,90,South Goa coast,Goa,22,shruti.bhat@example.com,Shruti Bhat,2.0,2026-09-26,100,5,2026-09-28 19:00:00+00,,,,
+128,190,Ulagalantha Perumal Temple,temple,f,0.00,30,Kanchipuram,Tamil Nadu,22,shruti.bhat@example.com,Shruti Bhat,4.0,2026-09-27,30,1,2026-09-29 19:00:00+00,,,,
+129,63,Gokarna Main Beach,beach,t,0.00,60,Gokarna,Karnataka,22,shruti.bhat@example.com,Shruti Bhat,5.0,2026-08-09,50,2,2026-08-11 19:00:00+00,,,,
+130,50,Banashankari Temple,temple,f,0.00,45,Badami-Aihole-Pattadakal,Karnataka,22,shruti.bhat@example.com,Shruti Bhat,4.0,2026-07-24,45,1,2026-07-26 19:00:00+00,,,,
+131,134,Jain Temple Sultan Bathery,heritage,t,0.00,30,Wayanad,Kerala,23,ganesh.iyer@example.com,Ganesh Iyer,5.0,2026-07-22,30,3,2026-07-24 19:00:00+00,,,,
+132,323,Jainath Temple,heritage,t,0.00,45,Adilabad,Telangana,23,ganesh.iyer@example.com,Ganesh Iyer,2.0,2026-07-08,40,5,2026-07-10 19:00:00+00,,,,
+133,310,Thousand Pillar Temple,heritage,t,0.00,60,Warangal & Ramappa,Telangana,23,ganesh.iyer@example.com,Ganesh Iyer,5.0,2026-10-07,65,1,2026-10-09 19:00:00+00,,,,
+134,196,Airavatesvara Temple Darasuram,heritage,t,0.00,60,Thanjavur,Tamil Nadu,23,ganesh.iyer@example.com,Ganesh Iyer,3.0,2026-07-28,70,4,2026-07-30 19:00:00+00,,,,
+135,355,Bhagwan Mahaveer National Park,wildlife,t,50.00,150,Mollem & Dudhsagar,Goa,24,neha.agarwal@example.com,Neha Agarwal,5.0,2026-09-23,160,1,2026-09-25 19:00:00+00,,,,
+136,241,Topslip Anamalai Tiger Reserve,wildlife,t,500.00,180,"Coimbatore, Pollachi & Valparai",Tamil Nadu,24,neha.agarwal@example.com,Neha Agarwal,5.0,2026-06-25,170,5,2026-06-27 19:00:00+00,,,,
+137,225,Sim's Park Coonoor,garden,t,30.00,60,Ooty & Coonoor,Tamil Nadu,24,neha.agarwal@example.com,Neha Agarwal,5.0,2026-08-17,70,1,2026-08-19 19:00:00+00,,,,
+138,10,Nisargadhama,trail,t,30.00,90,Coorg / Kodagu,Karnataka,24,neha.agarwal@example.com,Neha Agarwal,3.0,2026-09-29,100,1,2026-10-01 19:00:00+00,,,,
+139,234,Bear Shola Falls,waterfall,t,0.00,45,Kodaikanal,Tamil Nadu,25,manoj.pillai@example.com,Manoj Pillai,4.0,2026-09-03,55,1,2026-09-05 19:00:00+00,,,,
+140,322,Pochera Falls,waterfall,t,0.00,60,Adilabad,Telangana,25,manoj.pillai@example.com,Manoj Pillai,5.0,2026-10-09,60,1,2026-10-11 19:00:00+00,,,,
+141,42,Hebbe Falls,waterfall,t,50.00,150,Chikkamagaluru,Karnataka,25,manoj.pillai@example.com,Manoj Pillai,5.0,2026-09-29,150,1,2026-10-01 19:00:00+00,,,,
+142,231,Bryant Park,garden,t,30.00,60,Kodaikanal,Tamil Nadu,25,manoj.pillai@example.com,Manoj Pillai,3.0,2026-09-07,55,1,2026-09-09 19:00:00+00,,,,
+143,279,Jamia Masjid Gandikota,heritage,t,0.00,20,Gandikota,Andhra Pradesh,26,sana.khan@example.com,Sana Khan,3.0,2026-07-05,10,5,2026-07-07 19:00:00+00,,,,
+144,165,Kurisumala,trail,t,0.00,120,Vagamon,Kerala,26,sana.khan@example.com,Sana Khan,4.0,2026-07-29,115,1,2026-07-31 19:00:00+00,,,,
+145,328,Basilica of Bom Jesus,heritage,f,0.00,45,Panaji & Old Goa,Goa,26,sana.khan@example.com,Sana Khan,4.0,2026-10-09,55,4,2026-10-11 19:00:00+00,,,,
+146,100,Marine Drive Kochi,viewpoint,t,0.00,60,Kochi / Fort Kochi,Kerala,26,sana.khan@example.com,Sana Khan,5.0,2026-08-17,55,1,2026-08-19 19:00:00+00,,,,
+147,210,Dhanushkodi,heritage,t,0.00,120,Rameswaram & Dhanushkodi,Tamil Nadu,27,varun.krishna@example.com,Varun Krishna,3.0,2026-09-11,120,1,2026-09-13 19:00:00+00,,,,
+148,311,Warangal Fort,fort,t,25.00,90,Warangal & Ramappa,Telangana,27,varun.krishna@example.com,Varun Krishna,5.0,2026-07-26,95,3,2026-07-28 19:00:00+00,,,,
+149,96,Chinese Fishing Nets,beach,t,0.00,45,Kochi / Fort Kochi,Kerala,27,varun.krishna@example.com,Varun Krishna,4.0,2026-09-17,50,3,2026-09-19 19:00:00+00,,,,
+150,57,Kedareshwara Temple Halebidu,heritage,t,0.00,30,Belur-Halebidu,Karnataka,27,varun.krishna@example.com,Varun Krishna,2.0,2026-08-13,40,5,2026-08-15 19:00:00+00,,,,
+151,102,Colva Beach,beach,t,0.00,90,South Goa coast,Goa,28,pooja.shenoy@example.com,Pooja Shenoy,5.0,2026-10-04,80,2,2026-10-06 19:00:00+00,,,,
+152,63,Gokarna Main Beach,beach,t,0.00,60,Gokarna,Karnataka,28,pooja.shenoy@example.com,Pooja Shenoy,4.0,2026-08-09,55,5,2026-08-11 19:00:00+00,,,,
+153,252,Paradise Beach Puducherry,beach,t,250.00,150,Puducherry,Puducherry,28,pooja.shenoy@example.com,Pooja Shenoy,5.0,2026-10-06,140,2,2026-10-08 19:00:00+00,,,,
+154,353,Menezes Braganza House Chandor,heritage,f,100.00,60,South Goa coast,Goa,28,pooja.shenoy@example.com,Pooja Shenoy,4.0,2026-08-08,55,5,2026-08-10 19:00:00+00,,,,
