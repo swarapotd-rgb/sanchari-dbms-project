@@ -1,172 +1,153 @@
 # Sanchari
 
-**A constraint-aware travel itinerary feasibility and semantic discovery system for regional tourism.**
+**A travel planner for South India that checks whether your plan can actually be done.**
 
-DBMS Experiential Learning — Level 3 project, 5th semester.
+DBMS Experiential Learning, Level 3 project, 5th semester, PES University.
 Instructor: Dr. Nagasundari S
 
 ---
 
-## What the problem is
+## The problem
 
-Every travel app tells you *where* to go. None of them tells you whether the plan you
-just built can actually be executed.
+Travel apps tell you *where* to go, but not whether your day plan works. You can easily
+plan to arrive at a museum on the one weekday it is closed, after its last entry, or with
+40 minutes allowed for a 90-minute drive.
 
-Plan a Coorg weekend and you can easily end up with a 5:40 pm arrival at a gate whose
-ticket counter shut at 5:00, on a Monday when the place is closed anyway, after a drive
-that takes ninety minutes rather than the forty you assumed. Google Maps routes you.
-TripAdvisor ranks places. Nobody validates the plan.
+Sanchari checks every stop of a trip against real opening hours, closures, travel times,
+daylight and budget, and tells you exactly which stop breaks the plan and why.
 
-Sanchari validates the plan. You describe what you want in plain words, it finds
-candidate places by meaning rather than by tag, you assemble a day-by-day itinerary, and
-the database then checks every stop against real availability data and tells you exactly
-which stop breaks the plan and why.
+## Stack, and why each database
 
-## Why it needs a database
-
-Answering "is this day plan executable?" means checking one stop against opening hours
-for that weekday, dated closure windows, travel time from the previous stop by the chosen
-transport mode, daylight, the traveller's own pace and budget — simultaneously, in order,
-for every stop. That is a join across five to seven tables with interval arithmetic. It is
-exactly the work a relational database exists to do, and exactly the work a listing app
-never does.
-
----
-
-## Stack
-
-| Layer | Choice | Why |
+| Layer | Used for | Why |
 |---|---|---|
-| Relational | PostgreSQL 17 | everything the feasibility engine reads; interval logic, referential integrity |
-| Document | MongoDB | review bodies and rich place content, where the shape genuinely varies per row |
-| Vector | pgvector | semantic retrieval — "somewhere green and quiet" matches no tag |
-| Frontend | Next.js | required by the course |
+| **PostgreSQL 17** | places, users, trips, the feasibility engine | the checks join many tables and need constraints and transactions |
+| **pgvector** | "places like this" | finds places by meaning of their description, not by tag |
+| **MongoDB** | the written part of reviews | review text, tags and aspect ratings differ in shape from one review to the next |
+| **Next.js** | the web app | course requirement; server-side code talks to both databases |
 
-The line, in one sentence: if the feasibility engine reads it, it is in PostgreSQL; if
-its shape varies per row, it is in MongoDB; if it is retrieved by meaning rather than by
-value, it is a vector.
+## What is in the database
 
----
+- **19 tables, 24 foreign keys, 22 indexes**, including a GiST range index for closures
+  and an HNSW index for vector search
+- **358 real places** from OpenStreetMap across **49 destinations** in Karnataka, Kerala,
+  Tamil Nadu, Puducherry, Andhra Pradesh, Telangana and Goa
+- **4 views, 2 functions, 1 stored procedure, 2 triggers**
+- **154 reviews**: the numbers in PostgreSQL, the text in MongoDB, linked by `mongo_doc_id`
 
-## Core design
+### The feasibility engine
 
-- **16 entities · 20 relationships · 19 tables · 24 foreign keys · 135 columns**
-  (133 from `CREATE TABLE`, plus `place.short_description` and `trip.status_note`
-  added by the ALTER demos)
-- Eight feasibility checks (R01–R08), each traceable to the tables it reads —
-  run by the procedure `p_check_trip` (`db/08a`), defined in `docs/feasibility_rules.md`
-- ER diagram and relational schema in `docs/diagrams/`
+`CALL p_check_trip(trip_id)` runs 8 rules on every stop and saves the result in one
+transaction:
 
----
+| Rule | Checks | Type |
+|---|---|---|
+| R01 | open on that weekday | blocking |
+| R02 | arrival within entry hours | blocking |
+| R03 | no special closure (e.g. monsoon) | blocking |
+| R04 | enough travel time from the previous stop | blocking |
+| R05 | enough time spent at the place | warning |
+| R06 | daylight-only places visited in daylight | blocking |
+| R07 | day's travel within the traveller's limit | warning |
+| R08 | trip within budget | warning |
+
+Score = 100, minus 25 per blocking problem, minus 10 per warning.
+
+## The web app
+
+Sign in, pick a state on the map of South India, search its places, open a place to see
+its opening hours, reviews and similar places, add it to a trip, then click
+**Check feasibility**.
+
+| Role | Can do |
+|---|---|
+| Traveller | plan trips, add stops, run checks, write reviews |
+| Curator | edit place details, see the overview |
+| Admin | everything above, plus suspend or reactivate accounts |
+
+Details of each screen are in [`frontend/README.md`](frontend/README.md).
 
 ## Repository layout
 
 ```
-db/              SQL — extensions, tables, indexes, views, seed data, engine,
-                 triggers, run/reset/verify scripts
-mongo/           MongoDB — the review documents, their validator and indexes, demo queries
-docs/diagrams/   ER diagram (Chen) and relational schema (crow's foot)
-docs/            roadmap, work split, setup verification
+db/          SQL: tables, indexes, views, seed data, feasibility engine, triggers,
+             queries (10_queries.sql), and run_all / reset / verify scripts
+mongo/       review documents, validator, indexes, demo queries
+frontend/    the Next.js app
+docs/        ER diagram, relational schema, feasibility rules, work notes
 ```
-
----
 
 ## Setup
 
-You need PostgreSQL **17** with the `vector` and `btree_gist` extensions. Both team
-members must run the same major version.
+You need **Docker** and **Node.js 20+**. The commands are for Windows PowerShell.
 
-The quickest route is Docker, which ships PostgreSQL and pgvector together:
+**1. PostgreSQL** (with pgvector), then build the database:
 
-```bash
-docker run --name sanchari-db \
-  -e POSTGRES_PASSWORD=sanchari_dev \
-  -e POSTGRES_DB=sanchari \
-  -p 5432:5432 \
-  -v sanchari_data:/var/lib/postgresql/data \
-  -d pgvector/pgvector:pg17-bookworm
-```
+```powershell
+docker run --name sanchari-db -e POSTGRES_PASSWORD=sanchari_dev -e POSTGRES_DB=sanchari -p 5432:5432 -v sanchari_pg17:/var/lib/postgresql/data -d pgvector/pgvector:pg17-bookworm
 
-On Windows PowerShell, put that on one line without the `\` characters.
-
-### Verify your setup
-
-```bash
-# macOS / Linux / WSL
-docker exec -i sanchari-db psql -U postgres -d sanchari < db/00_check_setup.sql
-
-# Windows PowerShell
-Get-Content db\00_check_setup.sql | docker exec -i sanchari-db psql -U postgres -d sanchari
-```
-
-It should finish with no `ERROR` lines. The similarity search near the end must rank
-`waterfall`, then `lake`, then `fort` — that ordering is the proof that pgvector is
-genuinely working.
-
-### Build the schema
-
-`run_all.sql` pulls in the other files by path, so psql must be able to see the `db/`
-folder. Piping the file into the container does not work — only its own text gets
-sent. Copy the folder in instead:
-
-```bash
 docker cp db/. sanchari-db:/db
 docker exec sanchari-db psql -U postgres -d sanchari -f /db/reset.sql
 docker exec sanchari-db psql -U postgres -d sanchari -f /db/run_all.sql
 docker exec sanchari-db psql -U postgres -d sanchari -f /db/verify.sql
 ```
 
-(With native psql, from the repo root: `psql -U postgres -d sanchari -f db/run_all.sql`.)
-`verify.sql` must report **19 tables · 24 foreign keys · 22 indexes · 4 views ·
-2 functions · 1 procedure · 2 triggers**, zero rows in its checks 2–5, and in
-check 9 exactly the 8 test trips, each failing its one rule.
+`verify.sql` should report **19 tables, 24 foreign keys, 22 indexes, 4 views,
+2 functions, 1 procedure, 2 triggers**.
 
-Re-run `docker cp` after pulling changes — the copy in the container does not update
-on its own.
+**2. MongoDB** (optional; without it the app shows ratings but not review text):
 
-### Load the MongoDB reviews
-
-The written part of every review (title, text, aspect ratings, tags, photos) lives in
-MongoDB; `review_summary.mongo_doc_id` in PostgreSQL points at it. Create the container
-once:
-
-```bash
+```powershell
 docker run --name sanchari-mongo -p 27017:27017 -v sanchari_mongo:/data/db -d mongo:7
-```
-
-Then, and again after pulling changes:
-
-```bash
 docker cp mongo/. sanchari-mongo:/mongo
 docker exec sanchari-mongo mongosh sanchari --quiet /mongo/seed_reviews.js
-docker exec sanchari-mongo mongosh sanchari --quiet /mongo/queries.js
 ```
 
-`seed_reviews.js` must end with **documents: 154** and **indexes: 6**. `verify.sql`
-check 10 confirms all 154 reviews carry a MongoDB id. More detail in `mongo/README.md`.
+It should end with **documents: 154**.
 
-Full setup instructions, including non-Docker paths and troubleshooting, are in
-`docs/`.
+**3. The web app:**
 
----
+```powershell
+cd frontend
+npm install
+copy .env.example .env.local
+npm run dev
+```
+
+In `.env.local`, set `SESSION_SECRET` to any long random text. Then open
+http://localhost:3000.
+
+If PowerShell says *running scripts is disabled*, use `npm.cmd` instead of `npm`.
+
+**4. Example queries** (JOIN, GROUP BY, HAVING, subqueries, UPDATE and DELETE inside
+rolled-back transactions):
+
+```powershell
+docker exec sanchari-db psql -U postgres -d sanchari -f /db/10_queries.sql
+```
+
+## Demo accounts
+
+Every password is `Sanchari@2026`. All accounts are invented and use `@example.com`.
+
+| Role | Email |
+|---|---|
+| Traveller | ananya.rao@example.com |
+| Curator | rahul.hegde@example.com |
+| Admin | admin@example.com |
+
+## Security
+
+- Passwords are stored only as bcrypt hashes and checked inside PostgreSQL with `crypt()`.
+- Database settings come from `.env.local`, which git ignores. Nothing secret is in the code.
+- Every query passes user input as parameters (`$1, $2`), never pasted into SQL.
+- Validation is enforced by the database itself: CHECK, UNIQUE and FOREIGN KEY
+  constraints and a trigger. The app shows the rule's name when one refuses a change.
 
 ## Team
 
-Two members. Responsibilities are split by file, not by line — see the work split
-document in `docs/`. Branch naming: `ddl/people-places` and `ddl/trips-checks`.
+| Member | Main work |
+|---|---|
+| Swara Potdar | schema design, seed data, feasibility engine, triggers, MongoDB |
+| Shreya Shahapur | trips and checks tables, queries file, Next.js frontend |
 
----
-
-## Conventions
-
-Read `CONVENTIONS.md` before writing any SQL. It fixes naming, types, constraint naming
-and `ON DELETE` behaviour, so that two people writing on two machines produce one
-consistent schema.
-
----
-
-## Security note
-
-Database credentials are never committed. `sanchari_dev` is a local development password
-only. Application configuration is read from `.env`, which is listed in `.gitignore` from
-the first commit.
+Conventions for SQL naming and types are in [`CONVENTIONS.md`](CONVENTIONS.md).
