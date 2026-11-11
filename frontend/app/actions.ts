@@ -87,6 +87,68 @@ export async function login(_prev: LoginState, formData: FormData): Promise<Logi
   redirect('/explore');
 }
 
+// ---------------------------------------------------------------------
+//  Sign up: a new traveller creates their own account.          (INSERT)
+//  The account and an empty travel profile are created together in ONE
+//  transaction. New accounts are always Travellers: Curator and Admin
+//  accounts can only be made by someone with access to the database.
+// ---------------------------------------------------------------------
+export type SignupState = { error: string | null; name: string; email: string; city: string };
+
+export async function signup(_prev: SignupState, formData: FormData): Promise<SignupState> {
+  const name = String(formData.get('name') ?? '').trim();
+  const email = String(formData.get('email') ?? '').trim().toLowerCase();
+  const city = String(formData.get('city') ?? '').trim();
+  const password = String(formData.get('password') ?? '');
+  const confirm = String(formData.get('confirm') ?? '');
+  const keep = { name, email, city };
+
+  if (!name) return { error: 'Enter your name.', ...keep };
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return { error: 'Enter a valid email address.', ...keep };
+  if (password.length < 8) return { error: 'Choose a password of at least 8 characters.', ...keep };
+  if (password !== confirm) return { error: 'The two passwords do not match.', ...keep };
+
+  let account: { user_id: string; display_name: string; email: string };
+  try {
+    account = await inTransaction(async (db) => {
+      // crypt(password, gen_salt('bf', 8)) stores a bcrypt hash, exactly
+      // like the seeded users. The password itself is never stored.
+      const res = await db.query<{ user_id: string; display_name: string; email: string }>(
+        `INSERT INTO user_account (role_id, email, password_hash, display_name, home_city)
+         VALUES ((SELECT role_id FROM role WHERE role_name = 'Traveller'),
+                 $1, crypt($2, gen_salt('bf', 8)), $3, NULLIF($4, ''))
+         RETURNING user_id, display_name, email`,
+        [email, password, name, city],
+      );
+      const row = res.rows[0];
+      // An empty profile with the default pace; the rest can be set later.
+      await db.query('INSERT INTO traveller_profile (user_id) VALUES ($1)', [row.user_id]);
+      return row;
+    });
+  } catch (err) {
+    // uq_user_account_email: the database itself refuses a second account
+    // with the same email, even if two people submit at the same moment.
+    if ((err as { constraint?: string }).constraint === 'uq_user_account_email') {
+      return { error: 'An account with this email already exists. Sign in instead.', ...keep };
+    }
+    if ((err as { code?: string }).code === 'ECONNREFUSED') {
+      return { error: 'Could not reach the database. Check that the sanchari-db container is running.', ...keep };
+    }
+    return { error: friendlyDbError(err), ...keep };
+  }
+
+  // Signed in straight away.
+  const token = await createSessionToken({
+    userId: Number(account.user_id),
+    name: account.display_name,
+    email: account.email,
+    role: 'Traveller',
+  });
+  const jar = await cookies();
+  jar.set(SESSION_COOKIE, token, sessionCookieOptions);
+  redirect('/explore?ok=' + encodeURIComponent(`Welcome to Sanchari, ${account.display_name}. Pick a state to start planning.`));
+}
+
 export async function logout() {
   const jar = await cookies();
   jar.delete(SESSION_COOKIE);

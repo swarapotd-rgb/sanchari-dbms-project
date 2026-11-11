@@ -4,6 +4,7 @@ import { pool } from '@/lib/db';
 import { requireSession } from '@/lib/auth';
 import { southMap } from '@/lib/southMap';
 import { stateBySlug, project, PLACE_TYPES, cap, minutes, rupees } from '@/lib/helpers';
+import { AutoSubmitForm } from '../../components';
 
 export const dynamic = 'force-dynamic';
 
@@ -162,7 +163,7 @@ export default async function StatePage({
 
       <div className="state-layout">
         <div>
-          <form className="search-bar" method="get" role="search">
+          <AutoSubmitForm className="search-bar">
             <div className="q-row">
               <label htmlFor="q" className="visually-hidden">
                 Search places
@@ -221,15 +222,15 @@ export default async function StatePage({
               </div>
               <div className="field">
                 <label htmlFor="sort">Sort by</label>
-                <select id="sort" name="sort" defaultValue={sp.sort ?? ''}>
-                  <option value="">{q ? 'Best match' : 'Highest rated'}</option>
+                <select id="sort" name="sort" defaultValue={sort}>
+                  {q && <option value="relevance">Best match</option>}
                   <option value="rating">Highest rated</option>
                   <option value="fee">Lowest fee</option>
                   <option value="name">Name</option>
                 </select>
               </div>
             </div>
-          </form>
+          </AutoSubmitForm>
 
           <div className="result-meta">
             <span>

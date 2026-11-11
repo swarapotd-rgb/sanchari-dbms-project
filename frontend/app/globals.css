@@ -126,35 +126,12 @@ input[type='checkbox'] { width: auto; accent-color: var(--brown); }
 .login-story {
   background: var(--brown); color: var(--sand);
   padding: clamp(2rem, 5vw, 4.5rem);
-  display: flex; flex-direction: column; justify-content: center; gap: 2.5rem;
+  display: flex; flex-direction: column; justify-content: center; gap: 2rem;
 }
 .wordmark { font-weight: 700; font-size: 1.2rem; letter-spacing: -0.01em; color: inherit; text-decoration: none; }
 .login-story h1 { font-size: clamp(2.2rem, 4.4vw, 3.3rem); color: var(--paper); max-width: 13ch; }
 .login-story .lede { max-width: 44ch; color: #e3d2bb; margin-top: 1rem; }
 
-.route { list-style: none; margin: 0; padding: 0; max-width: 30rem; }
-.route-day { font-size: 0.875rem; color: #cdb596; margin-bottom: 0.75rem; }
-.stop { display: grid; grid-template-columns: 3.5rem 1.25rem 1fr; gap: 0 0.75rem; align-items: start; }
-.stop-time { font-variant-numeric: tabular-nums; color: #cdb596; font-size: 0.875rem; padding-top: 0.1rem; }
-.stop-track { position: relative; height: 100%; min-height: 3.25rem; }
-.stop-track::before {
-  content: ''; position: absolute; left: 50%; top: 0.55rem; bottom: -0.55rem; width: 2px;
-  transform: translateX(-50%); background: #a3815f;
-}
-.stop:last-child .stop-track::before { display: none; }
-.stop-dot {
-  position: absolute; left: 50%; top: 0.35rem; width: 0.7rem; height: 0.7rem;
-  transform: translateX(-50%); border-radius: 50%; background: var(--brown); border: 2px solid #cdb596;
-}
-.stop-name { font-weight: 600; color: var(--paper); }
-.stop-ok { display: block; font-size: 0.85rem; color: #cdb596; }
-.stop.is-broken .stop-dot { background: #f0c27b; border-color: #f0c27b; box-shadow: 0 0 0 5px rgba(240, 194, 123, 0.25); }
-.verdict {
-  display: inline-block; margin-top: 0.35rem; background: #f0c27b; color: var(--ink);
-  font-size: 0.85rem; font-weight: 600; padding: 0.15rem 0.6rem; border-radius: 999px;
-  animation: verdict-in 600ms 400ms both cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-@keyframes verdict-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 
 .login-form-side { display: flex; align-items: center; justify-content: center; padding: clamp(2rem, 5vw, 4rem) 1.5rem; }
 .login-card { width: 100%; max-width: 24rem; }
@@ -163,14 +140,24 @@ input[type='checkbox'] { width: auto; accent-color: var(--brown); }
 .login-card .field { margin-bottom: 1.1rem; }
 .login-card input { padding: 0.75rem 0.9rem; }
 .login-card .btn { padding: 0.8rem; }
-.demo-accounts { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: 0.875rem; color: var(--ink-soft); }
-.demo-accounts ul { margin: 0.5rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.25rem; }
-.demo-accounts code { color: var(--ink); font-family: inherit; font-weight: 600; }
 
 @media (max-width: 860px) {
   .login { grid-template-columns: 1fr; }
   .login-form-side { order: -1; }
 }
+
+/* The sample journey on the login page: one route drawn in on load. */
+.journey { display: block; width: 100%; max-width: 26rem; max-height: 40vh; }
+.journey-land { fill: rgba(252, 248, 242, 0.07); stroke: rgba(252, 248, 242, 0.28); stroke-width: 1.5; }
+.journey-route {
+  fill: none; stroke: #f0c27b; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 1; stroke-dashoffset: 1; animation: journey-draw 2.4s 300ms ease-in-out forwards;
+}
+.journey-stop { fill: var(--paper); stroke: #f0c27b; stroke-width: 3; }
+.journey-label { fill: #f3e6d3; font-size: 24px; font-weight: 600; }
+.journey-caption { font-size: 0.9rem; color: #cdb596; margin-top: -1.5rem; }
+@keyframes journey-draw { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) { .journey-route { stroke-dashoffset: 0; } }
 
 /* ---------- App shell ---------- */
 
@@ -388,3 +375,10 @@ details.panel[open] summary { margin-bottom: 1rem; }
 .bars li { display: grid; grid-template-columns: 11.5rem 1fr 2rem; gap: 0.75rem; align-items: center; font-size: 0.9rem; }
 .bars .bar { height: 0.7rem; background: var(--sand); border-radius: 4px; overflow: hidden; }
 .bars .bar span { display: block; height: 100%; background: var(--brown-2); border-radius: 4px; }
+
+/* Sign-in and sign-up: the link between the two pages, and small hints. */
+.switch-auth { margin-top: 1.25rem; text-align: center; font-size: 0.925rem; color: var(--ink-soft); }
+.switch-auth a { font-weight: 600; }
+.optional { font-weight: 400; color: var(--ink-soft); }
+.field-hint { font-size: 0.8rem; color: var(--ink-soft); }
+.form-error { background: var(--danger-bg); color: var(--danger); border-radius: 8px; padding: 0.7rem 0.9rem; margin-bottom: 1.1rem; font-size: 0.925rem; }

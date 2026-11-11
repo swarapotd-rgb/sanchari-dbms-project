@@ -75,6 +75,8 @@ const BY_CONSTRAINT: Record<string, string> = {
   ck_place_visit_minutes: 'Typical visit time must be more than 0 minutes.',
   ck_place_short_description: 'The description needs at least 10 characters.',
   fk_itinerary_stop_place: 'This place is part of a planned trip, so it cannot be removed.',
+  uq_user_account_email: 'An account with this email already exists.',
+  ck_user_account_email_shape: 'Enter a valid email address.',
 };
 
 type PgError = { code?: string; constraint?: string; message?: string };
