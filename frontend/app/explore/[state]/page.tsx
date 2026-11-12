@@ -30,6 +30,7 @@ type PlaceRow = {
   review_count: number;
   categories: string | null;
   total: string;
+  image_url: string | null;
 };
 
 const SORTS: Record<string, string> = {
@@ -86,6 +87,7 @@ export default async function StatePage({
     `WITH doc AS (
        SELECT   p.place_id, p.name, p.place_type, p.short_description, p.fee_indian,
                 p.typical_visit_minutes, p.requires_daylight, p.avg_rating, p.review_count,
+                p.image_url,
                 d.destination_id, d.name AS destination,
                 string_agg(ic.name, ', ' ORDER BY pc.relevance DESC) AS categories
        FROM     place             p
@@ -251,11 +253,28 @@ export default async function StatePage({
               {places.rows.map((p) => (
                 <li key={p.place_id}>
                   <Link href={`/places/${p.place_id}`} className="place-row">
-                    <div>
-                      <h3>{p.name}</h3>
-                      <span className="where">
-                        {cap(p.place_type)} in {p.destination}
-                      </span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                      {p.image_url && (
+                        <img
+                          src={p.image_url}
+                          alt={p.name}
+                          style={{
+                            width: '80px',
+                            height: '80px',
+                            borderRadius: '10px',
+                            objectFit: 'cover',
+                            flexShrink: 0,
+                            boxShadow: '0 2px 6px rgba(0,0,0,0.12)',
+                            border: '1px solid #e2e8f0'
+                          }}
+                        />
+                      )}
+                      <div>
+                        <h3>{p.name}</h3>
+                        <span className="where">
+                          {cap(p.place_type)} in {p.destination}
+                        </span>
+                      </div>
                     </div>
                     <div className="side">
                       {p.avg_rating ? (

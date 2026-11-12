@@ -33,10 +33,12 @@ export default async function PlacePage({
     fee_indian: string; fee_foreign: string; typical_visit_minutes: number; requires_daylight: boolean;
     avg_rating: string | null; review_count: number; latitude: string; longitude: string;
     destination: string; state: string; categories: string | null;
+    image_url: string | null;
   }>(
     `SELECT p.place_id, p.name, p.place_type, p.short_description, p.fee_indian, p.fee_foreign,
             p.typical_visit_minutes, p.requires_daylight, p.avg_rating, p.review_count,
             p.latitude, p.longitude, d.name AS destination, d.state,
+            p.image_url,
             v.categories
      FROM   place             p
      JOIN   destination       d ON d.destination_id = p.destination_id
@@ -131,8 +133,15 @@ export default async function PlacePage({
         <Link href="/explore">All states</Link> / <Link href={`/explore/${stateSlug}`}>{place.state}</Link> /{' '}
         {place.destination}
       </p>
-      <div className="page-head">
-        <div>
+      <div className="page-head" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+        {place.image_url && (
+          <img
+            src={place.image_url}
+            alt={place.name}
+            style={{ width: '130px', height: '130px', borderRadius: '14px', objectFit: 'cover', boxShadow: '0 4px 12px rgba(0,0,0,0.15)', border: '2px solid #e2e8f0' }}
+          />
+        )}
+        <div style={{ flex: 1 }}>
           <h1>{place.name}</h1>
           <p>
             {cap(place.place_type)} in {place.destination}, {place.state}

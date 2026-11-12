@@ -361,6 +361,7 @@ CREATE TABLE place (
 
     -- timestamps
     created_at              TIMESTAMPTZ     NOT NULL DEFAULT now(),
+    image_url               VARCHAR(500),
 
     -- ---------------- constraints ----------------
     CONSTRAINT pk_place PRIMARY KEY (place_id),
